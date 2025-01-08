@@ -1,0 +1,6 @@
+// map拡張
+@function mapReplace($map, $key, $value) {
+  $map: map-remove($map, $key);
+  $map: map-merge($map, ($key: $value));
+  @return $map;
+}

@@ -1,0 +1,27 @@
+/*
+---
+name: Alias
+category:
+  - 拡張
+  - 拡張/Function
+  - 拡張/Function/Alias
+tag:
+  - Helper
+---
+_aliasで定義した別名を取得
+
+```scss
+
+.some{
+  $alias: alias();
+}
+
+```
+
+*/
+
+@function alias() {
+  $val: nth(&, 1);
+  $result: mg($val, $alias);
+  @return $result;
+}

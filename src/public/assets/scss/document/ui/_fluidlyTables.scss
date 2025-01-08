@@ -1,0 +1,112 @@
+/*
+---
+name: Fluidly table
+category:
+  - ユーザーインターフェース
+  - ユーザーインターフェース/Fluidly table
+---
+
+## 発火条件
+テーブルタグ
+
+<style>
+@media screen and (min-width: 601px){
+  table{
+    background: #fff;
+  }
+  th, td{
+    border-top: 1px solid #efefef;
+    padding: .5em;
+  }
+}
+@media screen and (max-width: 600px){
+  table,
+  tbody,
+  tr,
+  th
+  {
+    display: block
+  }
+  table{
+    background: #fff;
+    padding: 0 0 .5em;
+  }
+  tr:nth-child(even){
+    background: #efefef;
+  }
+  tr:nth-child(even) th{
+    border-bottom: 1px solid #fff;
+  }
+  thead {
+    display: none;
+  }
+  th, td{
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+  tbody th {
+    font-weight: bold;
+    border-bottom: 1px solid #efefef;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+  }
+  tbody td {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: .5em;
+  }
+  tbody td:before {
+    content: attr(data-label);
+    padding-right: 1em;
+  }
+}
+</style>
+
+```html
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>table head 1</th>
+      <th>table head 2</th>
+      <th>table head 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>contents head 1</th>
+      <td>contents 1</td>
+      <td>contents 2</td>
+      <td>contents 3</td>
+    </tr>
+    <tr>
+      <th>contents head 2</th>
+      <td>contents 1</td>
+      <td>contents 2</td>
+      <td>contents 3</td>
+    </tr>
+    <tr>
+      <th>contents head 3</th>
+      <td>contents 1</td>
+      <td>contents 2</td>
+      <td>contents 3</td>
+    </tr>
+  </tbody>
+</table>
+```
+```css
+@media screen and (max-width: 600px){
+  tbody td {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: .5em;
+  }
+  tbody td:before {
+    content: attr(data-label);
+    padding-right: 1em;
+  }
+}
+```
+
+*/

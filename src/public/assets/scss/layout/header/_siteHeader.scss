@@ -1,0 +1,36 @@
+/**
+ * ヘッダー
+ */
+
+.siteHeader {
+  position: fixed;
+  height: 60px;
+  padding: 0 mg(paddings pc);
+  z-index: mg(levels float);
+  left: 0;
+  top: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+  flex-direction: column;
+}
+
+.siteID {
+  @include family(sans);
+  @include rem(24);
+  font-weight: 700;
+  line-height: 1;
+
+  &,
+  a {
+    color: #fff;
+  }
+
+  a {
+    display: block;
+    min-width: 230px;
+  }
+}

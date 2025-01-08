@@ -1,0 +1,18 @@
+@mixin cropLh($lh) {
+  $_crop: (1 - $lh) * 0.5em;
+  line-height: $lh;
+
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &::before {
+    margin-top: $_crop;
+  }
+
+  &::after {
+    margin-bottom: $_crop;
+  }
+}

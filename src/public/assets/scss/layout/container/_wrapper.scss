@@ -1,0 +1,21 @@
+/*
+---
+name: コンテンツラッパー
+category:
+  - Layout
+  - Layout/Container
+tag:
+  - Container
+---
+
+```html
+<div class="wrapper">
+  <div style="background: #000; width: 100%;height: 640px">
+  </div>
+</div>
+```
+*/
+
+.wrapper {
+  @include wrapper();
+}

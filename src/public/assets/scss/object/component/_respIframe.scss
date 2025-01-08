@@ -1,0 +1,64 @@
+/*
+---
+name: レスポンシブiframe
+category:
+  - Component
+  - Component/Responsive
+tag:
+  - Responsive
+---
+
+横幅がまちまちなデバイスで、iframeの縦横比を維持する
+
+## 縦横比 16:9
+
+```html
+<div style="max-width: 640px">
+  <div class="respIframe">
+    <iframe style="background:#bbb"></iframe>
+  </div>
+</div>
+```
+
+## 縦横比 4:3
+
+```html
+<div style="max-width: 640px">
+  <div class="respIframe aspect4-3">
+    <iframe style="background:#bbb"></iframe>
+  </div>
+</div>
+```
+
+## 縦横比 1:1
+
+```html
+<div style="max-width: 640px">
+  <div class="respIframe aspect1">
+    <iframe style="background:#bbb"></iframe>
+  </div>
+</div>
+```
+*/
+
+.respIframe {
+  padding-top: unquote(100 / 16 * 9 + '%');
+  position: relative;
+  width: 100%;
+
+  &.aspect4-3 {
+    padding-top: unquote(100 / 4 * 3 + '%');
+  }
+
+  &.aspect1 {
+    padding-top: 100%;
+  }
+
+  iframe {
+    height: 100% !important;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100% !important;
+  }
+}

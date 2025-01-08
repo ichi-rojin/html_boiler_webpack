@@ -1,0 +1,68 @@
+
+/**
+ * CSS Document
+ * sass 以外での編集禁止
+ */
+
+// ブラウザハック
+// @import './vendor/browser-hack/hacks';
+
+// Map拡張
+@import './vendor/helper/map';
+
+// 変数定義
+@import './var';
+@import './vars/**/*.scss';
+
+
+// Improve BEM with alias
+@import './alias';
+
+//
+// SASS関数定義
+//
+@import './foundation/functions/**/*.scss';
+
+//
+// SASS MIX-IN 定義
+//
+@import './foundation/mixins/**/*.scss';
+
+// Foundation
+@import './foundation/base/**/*.scss';
+
+// Layout
+@import './layout/**/*.scss';
+
+
+// Object
+@import './object/component/**/*.scss';
+
+// Project
+@import './object/page/**/*.scss';
+
+
+$hoverColor: ();
+@each $key, $value in mg(colors) {
+  @if($value != null) {
+    $hoverColor: map-merge($hoverColor, (
+      $key: darken($value, 15)
+    ));
+  }
+}
+$hoverColor: map-merge($hoverColor, (
+  back: #dfdfdf
+));
+// Utility
+@import './object/utility/**/*.scss';
+
+// Responsive Style
+@import './plugin/offcanvas';
+@import './plugin/responsive';
+
+// Test
+@import './test/alias-test';
+// @import './tests/semantic';
+
+// レギュレーション
+@import './document/**/**.scss';

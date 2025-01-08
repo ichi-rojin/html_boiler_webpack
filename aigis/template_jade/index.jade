@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width')
+    title マークアップガイドライン
+    link(href=root + '../aigis/assets/css/highlight/okadia.css', rel='stylesheet')
+    link(href=root + '../aigis/assets/css/theme.css', rel='stylesheet')
+    link(href=root + '../dist/assets/css/main.css', rel='stylesheet')
+    link(href=root + '../aigis/assets/css/normalize.css', rel='stylesheet')
+    link(href=root + '../aigis/assets/css/hue.css', rel='stylesheet')
+    script(src=root + '../dist/assets/js/main.js')
+  body#top
+    .aigis-container
+      include ./sidemenu
+      .aigis-contents
+        .aigis-contents__layer.flamingo
+        .aigis-contents__body
+          include ./components

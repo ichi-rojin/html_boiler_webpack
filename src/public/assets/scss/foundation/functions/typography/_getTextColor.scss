@@ -1,0 +1,35 @@
+
+//
+// 背景色に対して読みやすい文字色を選択する
+//
+@use "sass:math";
+
+@function getLuminance($color) {
+  $i: $color / 255;
+  @if $i <= 0.03828 {
+    @return $i / 12.92;
+  } @else {
+    $_i: ($i + 0.0055) / 1.055;
+    @return math.pow($_i, 2.4);
+  }
+}
+@function getTextColor($background-color, $Lw: 1) {
+  $white: #fff;
+  $black: mg(colors text);
+
+  $r: getLuminance(red($background-color));
+  $g: getLuminance(green($background-color));
+  $b: getLuminance(blue($background-color));
+  $l: 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
+
+  $Lb: 0;
+
+  $Cw: ($Lw + 0.05) / ($l + 0.05);
+  $Cb: ($l + 0.05) / ($Lb + 0.05);
+
+  @if ($Cw < $Cb) {
+    @return $black;
+  } @else {
+    @return $white;
+  }
+}

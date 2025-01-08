@@ -1,0 +1,87 @@
+
+$liBright: rgba(#fff, 0.04);
+$liShadow: rgba(#000, 0.4);
+
+.drawerInNav {
+  @include rem(12);
+  @include family(sans);
+  font-weight: 400;
+  border-bottom: 1px solid $liBright;
+
+  &__layer {
+    position: relative;
+    z-index: mg(levels object);
+    pointer-events: none;
+  }
+
+  li {
+    text-align: right;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    a {
+      border-top: 1px solid $liBright;
+      border-bottom: 1px solid $liShadow;
+      color: #fff;
+      display: block;
+      padding: 10px mg(paddings pc);
+      min-height: 66px;
+      position: relative;
+      text-decoration: none;
+      overflow: hidden;
+      vertical-align: bottom;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+      align-content: center;
+      flex-direction: row;
+
+      &::before,
+      &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      &::before {
+        opacity: 0.4;
+        transition: mg(duration) mg(ease) mg(duration) / 2;
+        transition-property: filter opacity;
+        background: linear-gradient(20deg, #000, transparent), url('#{mg(texture noise)}');
+        filter: contrast(150%) brightness(100%);
+      }
+
+      &::after {
+        transition: mg(duration) mg(ease);
+        transition-property: transform filter background;
+        background: linear-gradient(20deg, mg(colors effect), transparent), url('#{mg(texture noise)}');
+        filter: contrast(200%) brightness(150%);
+        transform: skewX(-45deg) scaleX(1.45) translateX(-100%);
+      }
+
+      @include hover((
+        type: false
+      )) {
+        color: #ccc;
+
+        &::before {
+          filter: contrast(100%) brightness(200%);
+          opacity: 0.4;
+        }
+
+        &::after {
+          filter: contrast(120%) brightness(100%);
+          transform: skewX(-45deg) scaleX(1.45) translateX(0);
+          background: linear-gradient(45deg, mg(colors effect), transparent);
+        }
+      }
+    }
+  }
+}

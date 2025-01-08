@@ -1,0 +1,25 @@
+/**
+ * フッター
+ */
+
+.copyright {
+  @include rem(11);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4) inset;
+  display: block;
+  text-align: center;
+  letter-spacing: 0.1em;
+
+  @keyframes copyright {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 110% 0%; }
+  }
+  $c1: darken(mg(colors effect), 20);
+  $c2: lighten(mg(colors effect), 5);
+  animation: copyright 16s linear infinite;
+  background: linear-gradient(45deg, $c1 0%, $c2 25%, $c1 50%, $c2 75%, $c1 100%) left bottom;
+  color: $c2;
+  padding: 3px mg(paddings pc);
+  position: relative;
+  z-index: mg(levels float);
+  background-size: 1000% 100%;
+}

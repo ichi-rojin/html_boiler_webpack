@@ -1,0 +1,13 @@
+.fpFog {
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 80%, transparent);
+  background: no-repeat top center;
+  background-size: 100% 100%;
+  mix-blend-mode: soft-light;
+  width: 100vw;
+  height: 110vh;
+  position: absolute;
+  z-index: mg(levels object) + 1;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}

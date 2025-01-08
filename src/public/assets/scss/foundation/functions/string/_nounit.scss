@@ -1,0 +1,27 @@
+/*
+---
+name: Nounit
+category:
+  - 拡張
+  - 拡張/Function
+  - 拡張/Function/Nounit
+tag:
+  - Helper
+---
+数値から単位を削除
+
+```scss
+
+.some{
+  $var: 30px;
+  padding: $var;
+  width: nounit($var) / 10em;
+}
+
+```
+
+*/
+@function nounit($value) {
+  $_nounit_divisor: (floor($value) * 2) % 2 + 1;
+  @return ($value / $_nounit_divisor);
+}

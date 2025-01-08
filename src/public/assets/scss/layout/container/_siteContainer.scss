@@ -1,0 +1,39 @@
+html:not(.isTouchDevice) {
+  overflow: hidden;
+}
+
+.customScrollBar {
+  border-radius: 4px;
+  width: 4px;
+  height: $sh;
+  border: 1px solid #fff;
+  background-color: mg(colors main);
+  position: fixed;
+  z-index: mg(levels overlay) - 1;
+  top: 0;
+  right: 5px;
+
+  @include hover((
+    type: false,
+    params: border-radius background width right,
+    duration: 0.1s
+  )) {
+    border-radius: 10px;
+    background-color: #fff;
+    width: 20px;
+    right: 0;
+  }
+}
+
+.customScrollBarBase {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: mg(levels overlay) - 2;
+  left: 0;
+  top: 0;
+}
+
+.siteContainer {
+  position: relative;
+}

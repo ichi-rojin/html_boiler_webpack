@@ -1,0 +1,133 @@
+/*
+---
+name: Button generator
+category:
+  - 拡張
+  - 拡張/Mixin
+  - 拡張/Mixin/Button generator
+tag:
+  - Generator
+---
+ボタンジェネレータ
+
+```scss
+@include btnGen( (
+  class  : someClassName,
+  color  : (default: #000000, main: #c99, primary: #9c9),
+  hover  : (default: #666666, main: #a99, primary: #9a9) ,
+  height : (default: 44px, min: 32px, max: 58px),
+  outline : true,
+) );
+```
+*/
+
+@mixin btnGen( $options ) {
+  $class: mg(class, $options) or 'btn';
+
+  .#{$class} {
+    color: #fff;
+    outline: none;
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    @if mg(color, $options) {
+      @each $key, $value in mg(color, $options) {
+        @if( mg(outline, $options) ) {
+          @if $key == 'default' {
+            border: 1px solid $value;
+            color: $value;
+          } @else {
+            &.-color--#{$key} {
+              border-color: $value;
+              color: $value;
+            }
+          }
+        } @else {
+          @if $key == 'default' {
+            background-color: $value;
+            color: getTextColor($value, 10);
+          } @else {
+            &.-color--#{$key} {
+              background-color: $value;
+              color: getTextColor($value, 10);
+            }
+          }
+        }
+      }
+    }
+    @if mg(hover, $options) {
+      @each $key, $value in mg(hover, $options) {
+        @if( mg(outline, $options) ) {
+          @if $key == 'default' {
+            @include hover((
+              type: false
+            )) {
+              background-color: $value;
+              color: #fff;
+            }
+          } @else {
+            &.-color--#{$key} {
+              @include hover((
+                type: false
+              )) {
+                background-color: $value;
+                color: #fff;
+              }
+            }
+          }
+        } @else {
+          @if $key == 'default' {
+            @include hover((
+              type: false
+            )) {
+              background-color: $value;
+            }
+          } @else {
+            &.-color--#{$key} {
+              @include hover((
+                type: false
+              )) {
+                background-color: $value;
+              }
+            }
+          }
+        }
+      }
+    }
+    @if mg(height, $options) {
+      @each $key, $value in mg(height, $options) {
+        padding-left: $value / 5;
+        padding-right: $value / 5;
+        @if $key == 'default' {
+          height: $value;
+        } @else {
+          &.-size--#{$key} {height: $value;}
+        }
+      }
+    }
+    @if mg(resp-height, $options) {
+      @each $bp, $option in mg(resp-height, $options) {
+        @include mq($bp) {
+          @each $key, $value in $option {
+            padding-left: $value / 5;
+            padding-right: $value / 5;
+            @if $key == 'default' {
+              height: $value;
+            } @else {
+              &.-size--#{$key} {height: $value;}
+            }
+          }
+        }
+      }
+    }
+    @if mg(fontsize, $options) {
+      @each $key, $value in mg(fontsize, $options) {
+        &.-size--#{$key} {font-size: $value;}
+      }
+    }
+  }
+}

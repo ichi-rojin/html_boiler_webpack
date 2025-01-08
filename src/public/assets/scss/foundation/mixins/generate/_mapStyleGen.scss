@@ -1,0 +1,15 @@
+//
+// マップスタイル生成
+// @param  {[type]} $hash     [ハッシュマップ]
+// @param  {[type]} $class    [クラス名]
+// @param  {[type]} $property [プロパティ]
+// @return {[type]}           [スタイル]
+//
+@mixin mapStyleGen( $hash, $class, $property ) {
+  @each $key, $value in $hash {
+    @if $property == font-family {
+      $value: unquote($value);
+    }
+    .#{$class}--#{$key} {#{$property}: $value;}
+  }
+}

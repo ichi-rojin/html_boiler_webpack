@@ -1,0 +1,123 @@
+/*
+---
+name: Media Query
+category:
+  - 拡張
+  - 拡張/Mixin
+  - 拡張/Mixin/Media Query
+tag:
+  - Helper
+---
+メディアクエリのシンタックスシュガー
+第1引数は、_var.scss site-sizes
+もしくは数値
+
+### _varの変数から参照
+```scss
+.some {
+  @include mq(sp) {
+    some property...
+  }
+}
+```
+
+or
+
+数値で指定
+```scss
+.some {
+  @include mq(600px) {
+    some property...
+  }
+}
+```
+
+展開後
+```css
+@media screen and (max-width: 600px){
+  .some {
+    some property...
+  }
+}
+```
+
+### メディア特性
+
+メディア特性はmax-widthが標準となっている。
+
+第2引数に true を設定することで、 min-width となる
+
+_varの変数から参照
+```scss
+.some {
+  @include mq(sp, true) {
+    some property...
+  }
+}
+```
+
+or
+
+数値で指定
+```scss
+.some {
+  @include mq(600px, true) {
+    some property...
+  }
+}
+```
+
+展開後
+```css
+@media screen and (min-width: 601px){
+  .some {
+    some property...
+  }
+}
+```
+
+### メディアクエリーの and論理
+
+第一引数にスペース区切りで、ブレークポイントを二つ渡すと、
+
+and論理となり、詳細なスコープを設定できる。
+
+```scss
+.some {
+  @include mq(sp tablet) {
+    some property...
+  }
+}
+```
+
+*/
+
+// 数値サポート
+@mixin mq($point, $min:false) {
+  @if( type-of($point) == list ) {
+    $point1: nth($point, 1);
+    $point2: nth($point, 2);
+    @if mg(site-sizes $point1) {
+      $point1: mg(site-sizes $point1);
+    }
+    @if mg(site-sizes $point2) {
+      $point2: mg(site-sizes $point2);
+    }
+    @media screen and (min-width: $point1+1) and (max-width: $point2) { @content; }
+  }@else if($min) {
+    @if mg(site-sizes $point) {
+      @media screen and (min-width: mg(site-sizes $point)+1) { @content; }
+    }@else {
+      @media screen and (min-width: $point+1) { @content; }
+    }
+    @media print {
+      @content;
+    }
+  }@else {
+    @if mg(site-sizes $point) {
+      @media screen and (max-width: mg(site-sizes $point)) { @content; }
+    }@else {
+      @media screen and (max-width: $point) { @content; }
+    }
+  }
+}

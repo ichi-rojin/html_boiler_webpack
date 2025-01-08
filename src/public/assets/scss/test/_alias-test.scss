@@ -1,0 +1,12 @@
+//
+// 重複エイリアス禁止
+//
+
+$alias-mirror: ();
+@each $key, $value in $alias {
+  @if map-has-key($alias-mirror, $value) {
+    @error 'The value you are trying to set already exists.';
+  } @else {
+    $alias-mirror: map-deep-set($alias-mirror, $value, $key);
+  }
+}

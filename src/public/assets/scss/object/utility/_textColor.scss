@@ -1,0 +1,23 @@
+/*
+---
+name: テキストカラー
+category:
+  - Utility
+  - Utility/Typography
+tag:
+  - Typography
+---
+
+```html
+<div style="display: flex; gap: 20px">
+  <p class="textColor--back">BACK</p>
+  <p class="textColor--primary">PRIMARY</p>
+  <p class="textColor--secondary">SECONDARY</p>
+  <p class="textColor--effect">EFFECT</p>
+  <p class="textColor--border">BORDER</p>
+  <p class="textColor--text">TEXT</p>
+</div>
+```
+*/
+
+@include mapStyleGen( mg(colors), 'textColor', 'color' );

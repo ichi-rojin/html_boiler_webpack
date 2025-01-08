@@ -1,0 +1,91 @@
+//
+// グリッドレイアウト
+//
+@mixin gridLayout($items, $gutter) {
+  @include clearfix;
+  margin-left: -$gutter;
+  margin-top: -$gutter;
+  @each $key, $value in $items {
+    #{unquote($key)} {
+      box-sizing: border-box;
+      margin-top: $gutter;
+      padding-left: $gutter;
+      float: left;
+      width: $value;
+    }
+  }
+}
+
+//
+// グリッドシステム
+//
+@mixin gutter( $options:() ) {
+  $bp: mg(breakpoint, $options) or '';
+  @for $i from 0 through 20 {
+    $step: $i * 5px;
+    &.gutter#{$bp}#{nounit($step)} {
+      margin-left: -$step;
+      margin-top: -$step;
+
+      > * {
+        box-sizing: border-box;
+        margin-top: $step;
+        padding-left: $step;
+      }
+    }
+  }
+}
+@mixin gridSystem( $num:12 ,$class:'grid-system' ) {
+  .#{$class}#{$num} {
+
+    @include gutter();
+
+    &::after {
+      clear: both;
+      content: '';
+      display: block;
+    }
+
+    @for $i from 1 through $num {
+      > .grid#{$i} {
+        float: left;
+        width: #{Math-floor(100 / $num * $i, 2)}#{'%'};
+      }
+      >.offset#{$i} {
+        margin-right: #{Math-floor(100 / $num * $i, 2)}#{'%'};
+      }
+      >.step#{$i} {
+        margin-left: #{Math-floor(100 / $num * $i, 2)}#{'%'};
+      }
+    }
+    @each $key, $value in mg(site-sizes) {
+      @media screen and (max-width: $value) {
+
+        @include gutter((
+          breakpoint: '-' + $key + '_'
+        ));
+
+        max-width: none;
+
+        > .offset_#{$key}_0 {
+          margin-right: 0 !important;
+        }
+        > .step_#{$key}_0 {
+          margin-left: 0 !important;
+        }
+
+        @for $i from 1 through $num {
+          > .grid_#{$key}_#{$i} {
+            width: #{Math-floor(100 / $num * $i, 2)}#{'%'};
+          }
+          > .offset_#{$key}_#{$i} {
+            margin-right: #{Math-floor(100 / $num * $i, 2)}#{'%'};
+          }
+          >.step_#{$key}_#{$i} {
+            margin-left: #{Math-floor(100 / $num * $i, 2)}#{'%'};
+          }
+        }
+      }
+    }
+  }
+}

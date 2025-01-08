@@ -1,0 +1,34 @@
+<%
+const metaConfig = require('../meta.json')
+const siteMeta = metaConfig.default
+const pageMeta = metaConfig[pageID]
+const meta = { ...siteMeta, ...pageMeta };
+%>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=1140, maximum-scale=1">
+<meta name="format-detection" content="telephone=no">
+<title><%= meta.title %></title>
+<meta name="description" content="<%= meta.description %>">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="<%= meta.title %>">
+<meta property="og:type" content="<%= meta.type %>">
+<meta property="og:description" content="<%= meta.description %>">
+<%_ if (pageMeta.url) { _%>
+<meta property="og:url" content="<%= pageMeta.url %>">
+<%_ } _%>
+<%_ if (pageMeta.ogp_img) { _%>
+<meta property="og:image" content="<%= pageMeta.ogp_img %>">
+<%_ } _%>
+<meta property="og:locale" content="<%= siteMeta.locale %>">
+<meta property="og:site_name" content="<%= siteMeta.title %>">
+<%_ if (pageMeta.url) { _%>
+<link rel="canonical" href="<%= pageMeta.url %>">
+<%_ } _%>
+<%_ if (typeof meta.schema !== 'undefined') { _%>
+<script type="application/ld+json">
+<%- JSON.stringify(meta.schema) %>
+</script>
+<%_ } _%>
+</head>

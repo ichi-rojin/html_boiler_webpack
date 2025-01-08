@@ -1,0 +1,20 @@
+/*
+---
+name: フォントファミリー
+category:
+  - Utility
+  - Utility/Typography
+tag:
+  - Typography
+---
+
+```html
+<div style="display: flex; gap: 20px">
+  <p class="fontFamily--gothic">ゴシック</p>
+  <p class="fontFamily--mincho">明朝</p>
+  <p class="fontFamily--serif">SERIF</p>
+</div>
+```
+*/
+
+@include mapStyleGen( mg(fonts), 'fontFamily', 'font-family' );

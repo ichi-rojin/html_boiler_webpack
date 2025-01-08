@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.*example
+.history
+.vscode
+node_modules/
+dist/
+/package-lock.json
+/yarn.lock
+/package-lock.json
+/yarn.lock

@@ -1,0 +1,80 @@
+h2.aigis-module__heading マークアップガイドライン
+  span.aigis-module__published Last update at #{timestamp}
+
+.aigis-module
+  h2 はじめに
+  p 当ガイドラインはプロジェクトの<br>
+    | ディレクトリ構造、<br>
+    | CSSモジュールの粒度や<br>
+    | 命名規則を統一することで、<br>
+    | HTML/CSS の品質を<br>
+    | 均一化する事を目的とする。
+
+  p 詳しくはレギュレーションページを参照。
+
+  h2 プロジェクトの初回設定
+
+  dl
+    dt 開発環境
+    dd
+      figure
+        figcaption
+          a(href='https://bitbucket.org/aigis_gituser/html_boiler_webpack/src/main/' target='_blank' rel='noopener noreferrer') https://bitbucket.org/aigis_gituser/html_boiler_webpack/src/main/
+        img(src=root + '../aigis/assets/img/home/cap1.png')
+
+    dt コーディングテンプレート
+    dd
+      figure
+        figcaption
+          a(href='https://bitbucket.org/aigis_gituser/markup/src/main/' target='_blank' rel='noopener noreferrer') https://bitbucket.org/aigis_gituser/markup/src/main/
+        img(src=root + '../aigis/assets/img/home/cap2.png')
+
+    dt 開発環境の src/public/ に配置する。
+    dd
+      img(src=root + '../aigis/assets/img/home/cap3.png')
+
+  h3 初期化(必須パッケージのインストール)
+  h4 Visual Studio Codeの場合サイドパネルから実行可能
+  img(src=root + '../aigis/assets/img/home/cap4.png')
+  h4 それ以外のエディタを使用する場合
+  p コマンドプロンプト、パワーシェル、などのターミナルで
+  pre npm i
+  もしくは
+  pre yarn install
+
+  この手順は次回からは不要
+
+  h2 プロジェクトの起動
+  h4 Visual Studio Codeの場合サイドパネルから実行可能
+  img(src=root + '../aigis/assets/img/home/cap5.png')
+  h4 それ以外のエディタを使用する場合
+  p コマンドプロンプト、パワーシェル、などのターミナルで
+  pre npm start
+  もしくは
+  pre yarn start
+
+  h2 プロジェクトの終了
+  ターミナルを閉じるか、
+  ul
+    li Ctrl + C(Win)
+    li Cmd + C(Mac)
+  画面にしたがって終了
+
+  h2 開発環境について
+  h3 対応テンプレートエンジン
+  ul
+    li ejs
+    li pug
+  h3 対応CSSプリプロセッサ
+  ul
+    li sass
+    li scss
+
+  h3 アセットの読み込み
+  figure
+    img(src=root + '../aigis/assets/img/home/cap6.png')
+    figcaption 不要なファイルの読み込みは削除する。
+
+
+  h2 サイトマップ
+  include ../sitemap

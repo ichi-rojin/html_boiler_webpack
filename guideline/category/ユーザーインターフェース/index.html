@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>マークアップガイドライン</title>
+    <link href="../../../aigis/assets/css/highlight/okadia.css" rel="stylesheet">
+    <link href="../../../aigis/assets/css/theme.css" rel="stylesheet">
+    <link href="../../../dist/assets/css/main.css" rel="stylesheet">
+    <link href="../../../aigis/assets/css/normalize.css" rel="stylesheet">
+    <link href="../../../aigis/assets/css/hue.css" rel="stylesheet">
+    <script src="../../../dist/assets/js/main.js"></script>
+  </head>
+  <body id="top">
+    <div class="aigis-container">
+      <div class="aigis-sidemenu flamingo">
+        <header class="aigis-header"><a href="../../index.html">Markup Guideline</a></header>
+        <h2 class="aigis-sidemenu__heading">Category</h2>
+        <nav class="aigis-categoryList"><ul data-path-depth="0"><li data-path-depth="0"><a href="..\..\category\Component\index.html">Component</a><ul data-path-depth="1"><li data-path-depth="1"><a href="..\..\category\Component\List\index.html">List</a></li><li data-path-depth="1"><a href="..\..\category\Component\Responsive\index.html">Responsive</a></li><li data-path-depth="1"><a href="..\..\category\Component\Typography\index.html">Typography</a></li></ul></li><li data-path-depth="0"><a href="..\..\category\Layout\index.html">Layout</a><ul data-path-depth="1"><li data-path-depth="1"><a href="..\..\category\Layout\Container\index.html">Container</a></li></ul></li><li data-path-depth="0"><a href="..\..\category\Utility\index.html">Utility</a><ul data-path-depth="1"><li data-path-depth="1"><a href="..\..\category\Utility\Button\index.html">Button</a></li><li data-path-depth="1"><a href="..\..\category\Utility\Tag\index.html">Tag</a></li><li data-path-depth="1"><a href="..\..\category\Utility\Typography\index.html">Typography</a></li></ul></li><li data-path-depth="0"><a href="..\..\category\ユーザーインターフェース\index.html" data-tree-current>ユーザーインターフェース</a><ul data-path-depth="1"><li data-path-depth="1"><a href="..\..\category\ユーザーインターフェース\Accordion\index.html">Accordion</a></li><li data-path-depth="1"><a href="..\..\category\ユーザーインターフェース\Fluidly-table\index.html">Fluidly table</a></li><li data-path-depth="1"><a href="..\..\category\ユーザーインターフェース\Off-canvas\index.html">Off canvas</a></li><li data-path-depth="1"><a href="..\..\category\ユーザーインターフェース\Responsive-link-text\index.html">Responsive link text</a></li><li data-path-depth="1"><a href="..\..\category\ユーザーインターフェース\Select-nav\index.html">Select-nav</a></li><li data-path-depth="1"><a href="..\..\category\ユーザーインターフェース\Smartphone-link-protocol\index.html">Smartphone link protocol</a></li><li data-path-depth="1"><a href="..\..\category\ユーザーインターフェース\Smooth-scroll\index.html">Smooth-scroll</a></li><li data-path-depth="1"><a href="..\..\category\ユーザーインターフェース\Window-information\index.html">Window information</a></li></ul></li><li data-path-depth="0"><a href="..\..\category\レギュレーション\index.html">レギュレーション</a><ul data-path-depth="1"><li data-path-depth="1"><a href="..\..\category\レギュレーション\1-設計\index.html">1 設計</a></li><li data-path-depth="1"><a href="..\..\category\レギュレーション\2-命名\index.html">2 命名</a></li><li data-path-depth="1"><a href="..\..\category\レギュレーション\3-まとめ\index.html">3 まとめ</a></li></ul></li><li data-path-depth="0"><a href="..\..\category\拡張\index.html">拡張</a><ul data-path-depth="1"><li data-path-depth="1"><a href="..\..\category\拡張\Function\index.html">Function</a><ul data-path-depth="2"><li data-path-depth="2"><a href="..\..\category\拡張\Function\Alias\index.html">Alias</a></li><li data-path-depth="2"><a href="..\..\category\拡張\Function\Map-get\index.html">Map get</a></li><li data-path-depth="2"><a href="..\..\category\拡張\Function\Nounit\index.html">Nounit</a></li></ul></li><li data-path-depth="1"><a href="..\..\category\拡張\Mixin\index.html">Mixin</a><ul data-path-depth="2"><li data-path-depth="2"><a href="..\..\category\拡張\Mixin\Button-generator\index.html">Button generator</a></li><li data-path-depth="2"><a href="..\..\category\拡張\Mixin\Hover\index.html">Hover</a></li><li data-path-depth="2"><a href="..\..\category\拡張\Mixin\Media-Query\index.html">Media Query</a></li><li data-path-depth="2"><a href="..\..\category\拡張\Mixin\Typography\index.html">Typography</a></li></ul></li></ul></li></ul>
+        </nav>
+        <h2 class="aigis-sidemenu__heading">Tag</h2>
+        <nav class="aigis-tags aigis-tagList"><a href="../../tag/Button/index.html" class="aigis-tags__item aigis-tags__item--Button">Button</a><a href="../../tag/Container/index.html" class="aigis-tags__item aigis-tags__item--Container">Container</a><a href="../../tag/Generator/index.html" class="aigis-tags__item aigis-tags__item--Generator">Generator</a><a href="../../tag/Helper/index.html" class="aigis-tags__item aigis-tags__item--Helper">Helper</a><a href="../../tag/List/index.html" class="aigis-tags__item aigis-tags__item--List">List</a><a href="../../tag/Responsive/index.html" class="aigis-tags__item aigis-tags__item--Responsive">Responsive</a><a href="../../tag/Tag/index.html" class="aigis-tags__item aigis-tags__item--Tag">Tag</a><a href="../../tag/Typography/index.html" class="aigis-tags__item aigis-tags__item--Typography">Typography</a>
+        </nav>
+        <h2 class="aigis-sidemenu__heading"><a href="../../color.html">All Colors</a></h2>
+      </div>
+      <div class="aigis-contents">
+        <div class="aigis-contents__layer flamingo"></div>
+        <div class="aigis-contents__body">
+          <nav>
+            <h1 class="aigis-module__heading">索引</h1>
+            <ul class="aigis-moduleList">
+              <li class="aigis-moduleList__item"><a href="#Accordion">Accordion</a></li>
+              <li class="aigis-moduleList__item"><a href="#Fluidly table">Fluidly table</a></li>
+              <li class="aigis-moduleList__item"><a href="#Off canvas">Off canvas</a></li>
+              <li class="aigis-moduleList__item"><a href="#Responsive link text">Responsive link text</a></li>
+              <li class="aigis-moduleList__item"><a href="#Select-nav">Select-nav</a></li>
+              <li class="aigis-moduleList__item"><a href="#Smooth-scroll">Smooth-scroll</a></li>
+              <li class="aigis-moduleList__item"><a href="#Smartphone link protocol">Smartphone link protocol</a></li>
+              <li class="aigis-moduleList__item"><a href="#Window information">Window information</a></li>
+            </ul>
+          </nav>
+          <div class="aigis-module">
+            <h2 id="Accordion" class="aigis-module__heading">Accordion</h2>
+            <div class="aigis-module__filepath">/src/public/assets/scss/document/ui/_accordionList.scss</div>
+            <ul class="aigis-tags">
+            </ul><style>
+.accordion,
+.toggle
+{
+  background: #fff;
+  padding: .5em;
+}
+
+.accordion__trigger,
+.toggle__trigger
+{
+  display: flex;
+  flex-wrap: nowrap;
+  cursor: pointer;
+  border-bottom: 1px solid #efefef;
+  padding: .5em;
+}
+.accordion__trigger:before,
+.toggle__trigger:before
+{
+  content: "→";
+  margin-right: 1em;
+}
+.accordion__target,
+.toggle__target
+{
+  border-top: 0;
+  padding: .5em;
+  background: #f9f9f9;
+}
+</style>
+
+<h2 id="-">アコーディオン</h2>
+<p>exclude: true</p>
+<script>
+$(function () {
+  $('.accordion').accordionList({
+    wrapper: '.accordion__container',
+    trigger: '.accordion__trigger',
+    target: '.accordion__target',
+    duration: 500,
+    exclude: true
+  })
+});
+</script>
+
+<div class="aigis-preview">
+  <div class="accordion">
+    <div class="accordion__container">
+        <div class="accordion__trigger">イベントトリガー 1</div>
+        <div class="accordion__target">コンテンツ 1</div>
+    </div>
+    <div class="accordion__container">
+        <div class="accordion__trigger">イベントトリガー 2</div>
+        <div class="accordion__target">コンテンツ 2</div>
+    </div>
+    <div class="accordion__container">
+        <div class="accordion__trigger">イベントトリガー 3</div>
+        <div class="accordion__target">コンテンツ 3</div>
+    </div>
+</div></div>
+
+<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>accordion<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>accordion__container<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>accordion__trigger<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>イベントトリガー 1<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>accordion__target<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>コンテンツ 1<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>accordion__container<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>accordion__trigger<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>イベントトリガー 2<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>accordion__target<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>コンテンツ 2<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>accordion__container<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>accordion__trigger<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>イベントトリガー 3<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>accordion__target<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>コンテンツ 3<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+</code></pre>
+<pre><code class="language-javascript"><span class="token function" >$</span><span class="token punctuation" >(</span><span class="token keyword" >function</span> <span class="token punctuation" >(</span><span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
+  <span class="token function" >$</span><span class="token punctuation" >(</span><span class="token string" >'.accordion'</span><span class="token punctuation" >)</span><span class="token punctuation" >.</span><span class="token function" >accordionList</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span>
+    wrapper<span class="token punctuation" >:</span> <span class="token string" >'.accordion__container'</span><span class="token punctuation" >,</span>
+    trigger<span class="token punctuation" >:</span> <span class="token string" >'.accordion__trigger'</span><span class="token punctuation" >,</span>
+    target<span class="token punctuation" >:</span> <span class="token string" >'.accordion__target'</span><span class="token punctuation" >,</span>
+    duration<span class="token punctuation" >:</span> <span class="token number" >500</span><span class="token punctuation" >,</span>
+    exclude<span class="token punctuation" >:</span> <span class="token boolean" >true</span>
+  <span class="token punctuation" >}</span><span class="token punctuation" >)</span>
+<span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+</code></pre>
+<h2 id="-">トグル</h2>
+<p>exclude: false</p>
+<script>
+$(function () {
+  $('.toggle').accordionList({
+    wrapper: '.toggle__container',
+    trigger: '.toggle__trigger',
+    target: '.toggle__target',
+    duration: 500,
+    exclude: false
+  })
+});
+</script>
+
+<div class="aigis-preview">
+  <div class="toggle">
+    <div class="toggle__container">
+        <div class="toggle__trigger">イベントトリガー 1</div>
+        <div class="toggle__target">コンテンツ 1</div>
+    </div>
+    <div class="toggle__container">
+        <div class="toggle__trigger">イベントトリガー 2</div>
+        <div class="toggle__target">コンテンツ 2</div>
+    </div>
+    <div class="toggle__container">
+        <div class="toggle__trigger">イベントトリガー 3</div>
+        <div class="toggle__target">コンテンツ 3</div>
+    </div>
+</div></div>
+
+<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>toggle<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>toggle__container<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>toggle__trigger<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>イベントトリガー 1<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>toggle__target<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>コンテンツ 1<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>toggle__container<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>toggle__trigger<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>イベントトリガー 2<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>toggle__target<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>コンテンツ 2<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>toggle__container<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>toggle__trigger<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>イベントトリガー 3<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>toggle__target<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>コンテンツ 3<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+</code></pre>
+<pre><code class="language-javascript"><span class="token function" >$</span><span class="token punctuation" >(</span><span class="token keyword" >function</span> <span class="token punctuation" >(</span><span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
+  <span class="token function" >$</span><span class="token punctuation" >(</span><span class="token string" >'.toggle'</span><span class="token punctuation" >)</span><span class="token punctuation" >.</span><span class="token function" >accordionList</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span>
+    wrapper<span class="token punctuation" >:</span> <span class="token string" >'.toggle__container'</span><span class="token punctuation" >,</span>
+    trigger<span class="token punctuation" >:</span> <span class="token string" >'.toggle__trigger'</span><span class="token punctuation" >,</span>
+    target<span class="token punctuation" >:</span> <span class="token string" >'.toggle__target'</span><span class="token punctuation" >,</span>
+    duration<span class="token punctuation" >:</span> <span class="token number" >500</span><span class="token punctuation" >,</span>
+    exclude<span class="token punctuation" >:</span> <span class="token boolean" >false</span>
+  <span class="token punctuation" >}</span><span class="token punctuation" >)</span>
+<span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Fluidly table" class="aigis-module__heading">Fluidly table</h2>
+            <div class="aigis-module__filepath">/src/public/assets/scss/document/ui/_fluidlyTables.scss</div>
+            <ul class="aigis-tags">
+            </ul><h2 id="-">発火条件</h2>
+<p>テーブルタグ</p>
+<style>
+@media screen and (min-width: 601px){
+  table{
+    background: #fff;
+  }
+  th, td{
+    border-top: 1px solid #efefef;
+    padding: .5em;
+  }
+}
+@media screen and (max-width: 600px){
+  table,
+  tbody,
+  tr,
+  th
+  {
+    display: block
+  }
+  table{
+    background: #fff;
+    padding: 0 0 .5em;
+  }
+  tr:nth-child(even){
+    background: #efefef;
+  }
+  tr:nth-child(even) th{
+    border-bottom: 1px solid #fff;
+  }
+  thead {
+    display: none;
+  }
+  th, td{
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+  tbody th {
+    font-weight: bold;
+    border-bottom: 1px solid #efefef;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+  }
+  tbody td {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: .5em;
+  }
+  tbody td:before {
+    content: attr(data-label);
+    padding-right: 1em;
+  }
+}
+</style>
+
+<div class="aigis-preview">
+  <table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>table head 1</th>
+            <th>table head 2</th>
+            <th>table head 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>contents head 1</th>
+            <td>contents 1</td>
+            <td>contents 2</td>
+            <td>contents 3</td>
+        </tr>
+        <tr>
+            <th>contents head 2</th>
+            <td>contents 1</td>
+            <td>contents 2</td>
+            <td>contents 3</td>
+        </tr>
+        <tr>
+            <th>contents head 3</th>
+            <td>contents 1</td>
+            <td>contents 2</td>
+            <td>contents 3</td>
+        </tr>
+    </tbody>
+</table></div>
+
+<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>table</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>thead</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>tr</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>th</span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>th</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>th</span><span class="token punctuation" >></span></span>table head 1<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>th</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>th</span><span class="token punctuation" >></span></span>table head 2<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>th</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>th</span><span class="token punctuation" >></span></span>table head 3<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>th</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>tr</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>thead</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>tbody</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>tr</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>th</span><span class="token punctuation" >></span></span>contents head 1<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>th</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>td</span><span class="token punctuation" >></span></span>contents 1<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>td</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>td</span><span class="token punctuation" >></span></span>contents 2<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>td</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>td</span><span class="token punctuation" >></span></span>contents 3<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>td</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>tr</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>tr</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>th</span><span class="token punctuation" >></span></span>contents head 2<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>th</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>td</span><span class="token punctuation" >></span></span>contents 1<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>td</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>td</span><span class="token punctuation" >></span></span>contents 2<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>td</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>td</span><span class="token punctuation" >></span></span>contents 3<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>td</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>tr</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>tr</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>th</span><span class="token punctuation" >></span></span>contents head 3<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>th</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>td</span><span class="token punctuation" >></span></span>contents 1<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>td</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>td</span><span class="token punctuation" >></span></span>contents 2<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>td</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>td</span><span class="token punctuation" >></span></span>contents 3<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>td</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>tr</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>tbody</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>table</span><span class="token punctuation" >></span></span>
+</code></pre>
+<pre><code class="language-css"><span class="token atrule" ><span class="token rule" >@media</span> screen and <span class="token punctuation" >(</span><span class="token property" >max-width</span><span class="token punctuation" >:</span> 600px<span class="token punctuation" >)</span></span><span class="token punctuation" >{</span>
+  <span class="token selector" >tbody td </span><span class="token punctuation" >{</span>
+    <span class="token property" >display</span><span class="token punctuation" >:</span> flex<span class="token punctuation" >;</span>
+    <span class="token property" >flex-wrap</span><span class="token punctuation" >:</span> nowrap<span class="token punctuation" >;</span>
+    <span class="token property" >padding-bottom</span><span class="token punctuation" >:</span> <span class="token number" >.5</span>em<span class="token punctuation" >;</span>
+  <span class="token punctuation" >}</span>
+  <span class="token selector" >tbody td<span class="token pseudo-element" >:before</span> </span><span class="token punctuation" >{</span>
+    <span class="token property" >content</span><span class="token punctuation" >:</span> <span class="token function" >attr</span><span class="token punctuation" >(</span>data-label<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    <span class="token property" >padding-right</span><span class="token punctuation" >:</span> <span class="token number" >1</span>em<span class="token punctuation" >;</span>
+  <span class="token punctuation" >}</span>
+<span class="token punctuation" >}</span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Off canvas" class="aigis-module__heading">Off canvas</h2>
+            <div class="aigis-module__filepath">/src/public/assets/scss/document/ui/_offCanvas.scss</div>
+            <ul class="aigis-tags">
+            </ul><h2 id="-">発火条件</h2>
+<p>data属性 data-uk-offcanvas</p>
+<h3 id="-">オプション</h3>
+<p>target: IDセレクタ</p>
+<div class="aigis-preview">
+  <a href="javascript:;" data-uk-offcanvas="{target:'#offCanvasMenu'}" title="">開く</a>
+<div class="drawer-nav uk-offcanvas" id="offCanvasMenu">
+    <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
+        <nav>
+            <ul>
+                <li><a href="#information" title="information">メニュー</a></li>
+            </ul>
+        </nav>
+    </div>
+</div></div>
+
+<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>javascript:;<span class="token punctuation" >"</span></span> <span class="token attr-name" >data-uk-offcanvas</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>{target:<span class="token punctuation" >'</span>#offCanvasMenu<span class="token punctuation" >'</span>}<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span><span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>開く<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>drawer-nav uk-offcanvas<span class="token punctuation" >"</span></span> <span class="token attr-name" >id</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>offCanvasMenu<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>uk-offcanvas-bar uk-offcanvas-bar-flip<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>nav</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>ul</span><span class="token punctuation" >></span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#information<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>information<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>メニュー<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>ul</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>nav</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Responsive link text" class="aigis-module__heading">Responsive link text</h2>
+            <div class="aigis-module__filepath">/src/public/assets/scss/document/ui/_responsiveLinkText.scss</div>
+            <ul class="aigis-tags">
+            </ul><h2 id="-">発火条件</h2>
+<p>data属性data-protocolにtelなど</p>
+<div class="aigis-preview">
+  <span data-sphref="../../../index.html">スマートフォンサイズで表示時トップに戻る</span></div>
+
+<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >data-sphref</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>../../../index.html<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>スマートフォンサイズで表示時トップに戻る<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >></span></span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Select-nav" class="aigis-module__heading">Select-nav</h2>
+            <div class="aigis-module__filepath">/src/public/assets/scss/document/ui/_selectNav.scss</div>
+            <ul class="aigis-tags">
+            </ul><h2 id="-">発火条件</h2>
+<p>select.select-nav</p>
+<style>
+.select-nav{
+  background: #fff; border: 1px solid #848484
+}
+</style>
+
+<div class="aigis-preview">
+  <select class="select-nav">
+    <option value="">Select</option>
+    <option value="../../../index.html">Guideline top</option>
+</select></div>
+
+<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>select</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>select-nav<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>option</span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span><span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>Select<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>option</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>option</span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>../../../index.html<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>Guideline top<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>option</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>select</span><span class="token punctuation" >></span></span>
+</code></pre>
+<h3 id="-">別窓でひらく</h3>
+<p>optionタグにtarget属性</p>
+<div class="aigis-preview">
+  <select class="select-nav">
+    <option value="">Select</option>
+    <option value="../../../index.html" target="_blank">Guideline top</option>
+</select></div>
+
+<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>select</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>select-nav<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>option</span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span><span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>Select<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>option</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>option</span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>../../../index.html<span class="token punctuation" >"</span></span> <span class="token attr-name" >target</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>_blank<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>Guideline top<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>option</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>select</span><span class="token punctuation" >></span></span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Smooth-scroll" class="aigis-module__heading">Smooth-scroll</h2>
+            <div class="aigis-module__filepath">/src/public/assets/scss/document/ui/_smoothScroll.scss</div>
+            <ul class="aigis-tags">
+            </ul><h2 id="-">発火条件</h2>
+<p>リンクの先頭が#</p>
+<div class="aigis-preview">
+  <a href="#top" title="">ページトップへ</a></div>
+
+<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#top<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span><span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>ページトップへ<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >></span></span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Smartphone link protocol" class="aigis-module__heading">Smartphone link protocol</h2>
+            <div class="aigis-module__filepath">/src/public/assets/scss/document/ui/_spProtocol.scss</div>
+            <ul class="aigis-tags">
+            </ul><h2 id="-">発火条件</h2>
+<p>data属性data-protocolにtelなど</p>
+<div class="aigis-preview">
+  <span data-protocol="tel">06-1234-5678</span></div>
+
+<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >data-protocol</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>tel<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>06-1234-5678<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >></span></span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Window information" class="aigis-module__heading">Window information</h2>
+            <div class="aigis-module__filepath">/src/public/assets/scss/document/ui/_windowInfo.scss</div>
+            <ul class="aigis-tags">
+            </ul><script>
+$(function () {
+  const resizeHandler = () => {
+    const vw = document.documentElement.style.getPropertyValue('--vw');
+    const vh = document.documentElement.style.getPropertyValue('--vh');
+    const sw = document.documentElement.style.getPropertyValue('--sw');
+
+    $('.windowWidth:first').text("Window width: " + vw);
+    $('.windowHeight:first').text("Window height: " + vh);
+    $('.scrollWidth:first').text("Scrollbar width: " + sw);
+  };
+  setTimeout(resizeHandler, 300);
+  $(window).on('resize', () => {
+    setTimeout(resizeHandler, 300)
+  });
+});
+</script>
+
+<pre><code class="language-javascript"><span class="token function" >$</span><span class="token punctuation" >(</span><span class="token keyword" >function</span> <span class="token punctuation" >(</span><span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
+  <span class="token keyword" >const</span> resizeHandler <span class="token operator" >=</span> <span class="token punctuation" >(</span><span class="token punctuation" >)</span> <span class="token operator" >=</span><span class="token operator" >></span> <span class="token punctuation" >{</span>
+    <span class="token keyword" >const</span> vw <span class="token operator" >=</span> document<span class="token punctuation" >.</span>documentElement<span class="token punctuation" >.</span>style<span class="token punctuation" >.</span><span class="token function" >getPropertyValue</span><span class="token punctuation" >(</span><span class="token string" >'--vw'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    <span class="token keyword" >const</span> vh <span class="token operator" >=</span> document<span class="token punctuation" >.</span>documentElement<span class="token punctuation" >.</span>style<span class="token punctuation" >.</span><span class="token function" >getPropertyValue</span><span class="token punctuation" >(</span><span class="token string" >'--vh'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    <span class="token keyword" >const</span> sw <span class="token operator" >=</span> document<span class="token punctuation" >.</span>documentElement<span class="token punctuation" >.</span>style<span class="token punctuation" >.</span><span class="token function" >getPropertyValue</span><span class="token punctuation" >(</span><span class="token string" >'--sw'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+
+    <span class="token function" >$</span><span class="token punctuation" >(</span><span class="token string" >'.windowWidth:first'</span><span class="token punctuation" >)</span><span class="token punctuation" >.</span><span class="token function" >text</span><span class="token punctuation" >(</span><span class="token string" >"Window width: "</span> <span class="token operator" >+</span> vw<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    <span class="token function" >$</span><span class="token punctuation" >(</span><span class="token string" >'.windowHeight:first'</span><span class="token punctuation" >)</span><span class="token punctuation" >.</span><span class="token function" >text</span><span class="token punctuation" >(</span><span class="token string" >"Window height: "</span> <span class="token operator" >+</span> vh<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    <span class="token function" >$</span><span class="token punctuation" >(</span><span class="token string" >'.scrollWidth:first'</span><span class="token punctuation" >)</span><span class="token punctuation" >.</span><span class="token function" >text</span><span class="token punctuation" >(</span><span class="token string" >"Scrollbar width: "</span> <span class="token operator" >+</span> sw<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+  <span class="token punctuation" >}</span><span class="token punctuation" >;</span>
+  <span class="token function" >setTimeout</span><span class="token punctuation" >(</span>resizeHandler<span class="token punctuation" >,</span> <span class="token number" >300</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+  <span class="token function" >$</span><span class="token punctuation" >(</span>window<span class="token punctuation" >)</span><span class="token punctuation" >.</span><span class="token function" >on</span><span class="token punctuation" >(</span><span class="token string" >'resize'</span><span class="token punctuation" >,</span> <span class="token punctuation" >(</span><span class="token punctuation" >)</span> <span class="token operator" >=</span><span class="token operator" >></span> <span class="token punctuation" >{</span>
+    <span class="token function" >setTimeout</span><span class="token punctuation" >(</span>resizeHandler<span class="token punctuation" >,</span> <span class="token number" >300</span><span class="token punctuation" >)</span>
+  <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+</code></pre>
+<p><style>
+.fontSize{
+  font-size: calc(10px + var(--sw));
+}
+</style></p>
+<pre><code class="language-css"><span class="token selector" ><span class="token class" >.fontSize</span></span><span class="token punctuation" >{</span>
+  <span class="token property" >font-size</span><span class="token punctuation" >:</span> <span class="token function" >calc</span><span class="token punctuation" >(</span><span class="token number" >10</span>px + <span class="token function" >var</span><span class="token punctuation" >(</span>--sw<span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token punctuation" >}</span>
+</code></pre>
+<div class="aigis-preview">
+  <div class="windowWidth">
+</div>
+<div class="windowHeight">
+</div>
+<div class="scrollWidth">
+</div>
+<div class="fontSize"> font size </div></div>
+
+<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>windowWidth<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>windowHeight<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>scrollWidth<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>fontSize<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+font size
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+</code></pre>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

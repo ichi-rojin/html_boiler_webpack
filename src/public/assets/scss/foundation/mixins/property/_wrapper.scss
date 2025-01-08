@@ -1,0 +1,46 @@
+@mixin wrapper($width: mg(wrapper pc)) {
+  @include centering($width);
+}
+@mixin wrapperInn($size: mg(wrapper pc)) {
+  margin-left: calc(((100vw - 100%) / 2) * -1 + #{$swr / 2});
+  margin-right: calc(((100vw - 100%) / 2) * -1 + #{$swr / 2});
+  padding-left: calc((100vw - #{$size}) / 2 + #{$swr});
+  padding-right: calc((100vw - #{$size}) / 2 + #{$swr});
+  @supports(--css: variables) {
+    margin-left: calc(((#{$vw} - 100%) / 2) * -1 + #{$sw / 2});
+    margin-right: calc(((#{$vw} - 100%) / 2) * -1 + #{$sw / 2});
+    padding-left: calc((#{$vw} - #{$size}) / 2);
+    padding-right: calc((#{$vw} - #{$size}) / 2);
+  }
+  @include mq($size) {
+    box-sizing: content-box;
+    margin-left: -1 * mg(paddings sp);
+    margin-right: -1 * mg(paddings sp);
+    padding-left: mg(paddings sp);
+    padding-right: mg(paddings sp);
+  }
+}
+@mixin wrapperOver(
+  $size: null,
+  $directions: null,
+  $hasPadding: false,
+) {
+  $size: $size or mg(wrapper pc);
+  $directions: $directions or (left right);
+
+  @each $direction in $directions {
+
+    @supports not (--css: variables) {
+      margin-#{$direction}: calc(((100vw - #{$size}) / 2) * -1 + #{$sw});
+      @if($hasPadding) {
+        padding-#{$direction}: calc((100vw - #{$size}) / 2 + #{$sw});
+      }
+    }
+    @supports(--css: variables) {
+      margin-#{$direction}: calc(((#{$vw} - #{mg(wrapper middle)}) / 2) * -1);
+      @if($hasPadding) {
+        padding-#{$direction}: calc((#{$vw} - #{mg(wrapper middle)}) / 2);
+      }
+    }
+  }
+}

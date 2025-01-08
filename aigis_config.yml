@@ -1,0 +1,18 @@
+name: Markup Guideline
+# The directory containing the source files to parse recursively
+source:
+  - ./src/public/assets/scss
+  - ./src/public/assets/sass
+
+# The directory that aigis will build to
+dest: ./guideline
+
+# The assets needed to build the docs
+# You may put doc related assets here too: images, css, etc.
+dependencies:
+  - ./aigis/assets
+
+# The directory containing the tempalte files to generate pages
+# It must contain 'layout.xxx' and 'index.xxx' (.ejs or .jade or .hbs)
+template_dir: ./aigis/template_jade
+template_engine: jade

@@ -1,0 +1,26 @@
+/*
+---
+name: 注釈
+category:
+  - Component
+  - Component/List
+tag:
+  - List
+---
+
+```html
+<ul>
+	<li class="notes">注釈</li>
+	<li class="notes">注釈</li>
+	<li class="notes">注釈</li>
+</ul>
+```
+*/
+
+.notes {
+  @include prefix((
+    content: '※',
+    indent: 1.4em,
+    offset: 0.4em
+  ));
+}

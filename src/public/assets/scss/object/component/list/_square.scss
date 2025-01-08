@@ -1,0 +1,22 @@
+/*
+---
+name: リストスクウェア
+category:
+  - Component
+  - Component/List
+tag:
+  - List
+---
+
+```html
+<ul>
+	<li class="list">リスト</li>
+	<li class="list">リスト</li>
+	<li class="list">リスト</li>
+</ul>
+```
+*/
+
+.list {
+  @include prefix;
+}

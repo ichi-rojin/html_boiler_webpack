@@ -1,0 +1,45 @@
+
+
+/**
+ * ドロワーメニュー定義
+ */
+
+.offcanvas {
+  background: #333;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  position: fixed;
+  -ms-scroll-chaining: none;
+  top: 0;
+  transform: translateX(-100%);
+  min-width: 270px;
+  width: 25vw;
+  max-width: calc(100vw - 70px);
+  z-index: mg(levels overlay) + 10;
+}
+
+.drawer--isOpen .offcanvas {
+  z-index: mg(levels overlay) + 1;
+}
+
+
+.offcanvas-base {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  touch-action: none;
+  z-index: -100;
+}
+
+.drawer--isOpen .offcanvas-base {
+  z-index: mg(levels overlay);
+}
+
+.drawer--isOpen .offcanvas {
+  transform: translateX(0%);
+}

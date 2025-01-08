@@ -1,0 +1,11 @@
+@mixin centering( $width: null, $provide: null ) {
+
+  margin-left: auto;
+  margin-right: auto;
+
+  width: $width;
+  @each $key, $value in $provide {
+    #{$key}: $value;
+  }
+
+}

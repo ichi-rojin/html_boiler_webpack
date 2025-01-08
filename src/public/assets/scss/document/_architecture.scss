@@ -1,0 +1,119 @@
+/*
+---
+name: 設計思想
+category:
+  - レギュレーション
+  - レギュレーション/1 設計
+---
+
+SCSSのディレクトリ構造は、<a href="https://github.com/hiloki/flocss" target="_blank" rel="noreferrer noopener">FLOCSS</a>を準拠とする。
+
+FLOCSSは、ComponentとProjectの<br>
+区分けが、難しいケースがあるので<br>
+統合し、Projectは廃止。<br>
+代わりに、ページ固有のスタイルを、<br>
+定義するPageを追加する。
+
+## FLOCSS(Foundation Layout Object CSS)の構成
+
+### Foundation
+リセット・ノーマライズ系cssなど サイトの基本となるスタイル
+
+### Layout
+ヘッダー、フッター、サイドバー、メインコンテンツのラッパーなど
+
+サイトの骨組み部分を構成する要素
+
+### Object
+
+Object は 大きく分かれて 3 つ
+
+- Component
+- Page
+- Utility
+
+#### Component
+サイト全体で再利用できるモジュール
+
+FLOCSSのProjectと統合、階層関係はなく、
+
+すべて分割可能な単位で定義する。
+
+PageやUtilityで三回以上（コードリファクタリングの原則 Rule of three）
+
+出現するスタイルがあれば、ここに移行する事を検討する。
+
+また、再利用前提のモジュールであるため、
+
+margin top left translate などの
+
+座標系プロパティを一切含めてはならない。
+
+モジュールを包括する要素でコントロールすること。
+
+#### Page
+ページ固有のスタイル。
+
+ページごとにディレクトリを分割し、
+
+パーツ事にファイルを設置する。
+
+```
+- /page
+  - /home
+    - header
+    - section
+      - heading
+      - contents
+        - paragraph
+  - /company
+    - header
+    - section
+      - heading
+      - contents
+    ...
+```
+
+Componentに移行する可能性を念頭に、
+
+座標系プロパティを設定する際は、注意すること。
+
+##### 座標系プロパティを分離するテクニック
+
+```scss
+.somePageElement{
+  * + .module{
+    margin-top: 2em;
+  }
+
+  &__body + .module{
+    margin-top: 4em;
+  }
+}
+
+.module{
+  some property...
+}
+```
+
+#### Vendor
+外部ライブラリの設置場所
+
+##### Plugin
+多案件で使用頻度の高いスタイル。
+
+( レスポンシブナビゲーション、スライダーなど )
+
+使用する場合は structure.scss でimportする。
+
+##### Var , Vars
+変数定義、プロジェクトごとに要変更
+
+##### Test
+テスト用スタイル。
+
+構文エラーを視覚的に表示する semantic
+
+別名定義の重複チェックを行う alias-test など
+
+*/

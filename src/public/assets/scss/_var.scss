@@ -1,0 +1,105 @@
+//
+// SASS変数定義
+//
+
+// viewport size
+$vw: var(--vw, 100vw);
+$vh: var(--vh, 100vh);
+$sh: var(--sh, 100%);
+
+//
+// 配列操作
+// map-get($map, $key)     : 指定したキーの値を取得する関数
+// map-merge($map1, $map2) : 2つのマップをマージする関数
+// map-keys($map)          : 1つのマップ内のすべてのキーをカンマ区切りのリストで返す関数
+// map-values($map)        : 1つのマップ内のすべての値をカンマ区切りのリストで返す関数
+// map-has-key($map, $key) : 1つのマップ内に特定のキーがあるかどうか調べる関数
+//
+
+//
+// グローバル変数定義
+// 参照 mg(namespace namespace)
+//
+
+$base-fontsize: 14px;
+
+$global: (
+
+  rhythm: (
+    vertical: (
+      pc: (
+      ),
+      sp: (
+      ),
+    ),
+  ),
+
+  paddings: (
+    pc: 30px,
+    sp: 15px,
+  ),
+
+  wrapper: (
+    pc     : 1170px,
+  ),
+
+  site-sizes: (
+    sp     : 600px,
+    tablet : 960px,
+    mobile : 1280px,
+  ),
+
+  line-height: (
+    s: 1.23,
+    m: 1.8,
+    l: 2.3,
+  ),
+
+  colors: (
+    back   : #fff,
+    primary   : #549cc5,
+    secondary : #225c57,
+    effect    : #25a2a7,
+    border    : #909090,
+    text      : #2f2f2f,
+  ),
+
+  levels: (
+    back: -1,
+    base: 0,
+    object: 100,
+    layer: 200,
+    float: 500,
+    overlay: 1000,
+  ),
+
+  forms: (
+    all    : 'select,option,button,textarea,input:not([type]),input[type="text"],input[type="password"],input[type="email"],input[type="url"],input[type="search"],input[type="tel"],input[type="number"],input[type="datetime"],input[type="submit"],input[type="reset"]',
+    text   : 'textarea,input[type="text"],input[type="password"],input[type="email"],input[type="url"],input[type="search"],input[type="tel"],input[type="number"],input[type="datetime"]',
+    button : 'button,input[type="submit"],input[type="reset"]',
+    check  : 'input[type="radio"],input[type="checkbox"]'
+  ),
+
+  duration: 0.5s,
+  ease: ease-in-out,
+
+  fonts: (
+    gothic : 'Arial,Verdana,"Helvetica Neue",Helvetica,"Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic", sans-serif',
+    mincho : '"游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro W6","Hiragino Mincho Pro","HGS明朝E","ＭＳ Ｐ明朝",serif',
+
+    serif  : '"Sorts Mill Goudy", serif',
+    sans   : '"Titillium Web", sans-serif',
+  ),
+
+  texture: (
+    noise: 'data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22500%22%20height%3D%22500%22%3E%20%3Cfilter%20id%3D%22noise%22%20x%3D%220%22%20y%3D%220%22%3E%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.65%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22%2F%3E%20%3CfeBlend%20mode%3D%22screen%22%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20width%3D%22500%22%20height%3D%22500%22%20filter%3D%22url(%23noise)%22%20opacity%3D%220.15%22%2F%3E%3C%2Fsvg%3E'
+  )
+
+);
+// Referenced from https://ics.media/entry/200317/
+// gothic : '"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif',
+
+@import url('https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+

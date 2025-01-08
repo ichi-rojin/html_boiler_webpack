@@ -1,0 +1,19 @@
+/*
+---
+name: 禁則処理
+category:
+  - Component
+  - Component/Responsive
+tag:
+  - Typography
+---
+
+```html
+<p><span class="wbr">改行単位</span><span class="wbr">改行禁止単位</span><span class="wbr">この単位では改行しません。</span><span class="wbr">親要素よりも長い場合は改行単位範囲で、改行します。</span></p>
+```
+*/
+
+.wbr {
+  display: inline-block;
+  vertical-align: baseline;
+}

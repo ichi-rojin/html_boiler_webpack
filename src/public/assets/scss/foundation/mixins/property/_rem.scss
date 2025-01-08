@@ -1,0 +1,24 @@
+/*
+---
+name: Rem
+category:
+  - 拡張
+  - 拡張/Mixin
+  - 拡張/Mixin/Typography
+tag:
+  - Typography
+---
+フォントサイズremサポート
+未対応ブラウザはpxでフォールバック
+
+```scss
+.some {
+  @include rem(18);
+}
+```
+*/
+@mixin rem($size, $rule:'') {
+  $size: nounit($size);
+  font-size: $size + px + $rule;
+  font-size: unquote(($size / 10) * 1rem + $rule);
+}

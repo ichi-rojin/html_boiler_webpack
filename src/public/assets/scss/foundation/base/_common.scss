@@ -1,0 +1,94 @@
+html,
+body {
+  width: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  @include family(gothic);
+  @include rem(16);
+  color: mg(colors text);
+  font-feature-settings: 'palt';
+  letter-spacing: 0.35em;
+  line-break: strict;
+  line-height: 2;
+  word-break: break-word;
+  &.-loading{
+    background: url('../img/common/fog_pattern04.png') no-repeat top center mg(colors primary);
+    background-size: cover;
+  }
+}
+
+li{
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+@mixin focus-ring() {
+  html:not([data-whatinput='mouse']):not([data-whatinput='touch']) &:focus {
+    @content;
+  }
+}
+
+a,
+button:focus {
+  @include focus-ring {
+    outline: none;
+  }
+}
+
+
+::focus-ring {
+  border-style: none;
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border-style: none;
+}
+
+::-moz-focusring {
+  border-style: none;
+}
+
+select::-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 mg(colors text);
+}
+
+img {
+  vertical-align: bottom;
+}
+
+#{mg(forms all)} {
+  appearance: none;
+  box-sizing: border-box;
+
+  font-family: unquote(mg(fonts gothic));
+}
+
+#{mg(forms text)} {
+  @include rem(14);
+  border: 1px solid mg(colors border);
+  padding: 5px;
+  width: 100%;
+}
+#{mg(forms button)} {
+  background: none;
+  border: none;
+  display: inline-block;
+}
+
+#{mg(forms check)} {
+  margin-right: 5px;
+  position: relative;
+  top: -0.05em;
+  vertical-align: middle;
+}

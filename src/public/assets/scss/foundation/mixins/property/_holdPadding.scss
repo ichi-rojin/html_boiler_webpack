@@ -1,0 +1,8 @@
+@mixin holdPadding() {
+  padding-left: mg(paddings pc);
+  padding-right: mg(paddings pc);
+  @include mq(sp) {
+    padding-left: mg(paddings sp);
+    padding-right: mg(paddings sp);
+  }
+}

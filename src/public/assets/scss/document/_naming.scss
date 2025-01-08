@@ -1,0 +1,199 @@
+$_alias: '.alias';
+/*
+---
+name: 命名規則
+category:
+  - レギュレーション
+  - レギュレーション/2 命名
+---
+
+## 概要
+
+クラス名の命名規則はMindBEMdingを基本とし、
+
+記述を簡潔にするための別名を可能とした、
+
+改良型の規則を適用する。
+
+### HTML
+
+``` html
+<div class="block">
+	<div class="bl__elemenet">
+	</div>
+</div>
+```
+
+### SCSS
+
+sass関数 alias()によって、パーシャル _alias.scss から別名を取得する
+
+(別名を使用する際は、_alias.scssへの登録を必須とする。)
+
+別名の重複は禁止、重複した際はエラーが発生し、トランスパイルは停止される。
+
+_alias.scss
+``` scss
+$alias: (
+
+  '.block': '.bl',
+
+);
+```
+
+_block.scss
+``` scss
+.block{
+
+	$_alias: alias();
+
+	#{$_alias}__elemenet{
+	}
+
+}
+```
+
+## MindBEMding について
+
+MindBEMdingのベースとなるBEMは
+
+セレクタの属性を
+
+- Block（基本要素）
+- Element（子孫要素）
+- Modifier（バリエーション・状態）
+
+の三つに分ける。
+
+```
+.block
+.block__element
+.block--modifier
+.block__element--modifier
+```
+
+本ルールは MindBEMding を基本としながら、
+
+モジュールのディレクトリ間移動の敷居を下げるために、
+
+クラス名のPrefixは不採用とする。
+
+
+また、単語間の区切りはBEMの属性としては意味がないので、
+
+ハイフン、アンダースコアなどの記号を使わず
+
+単語の区切り文字を大文字で表現する
+
+キャメルケース(lower)とする。
+
+### NG
+
+```
+.blog-section
+.blog_section
+```
+
+### OK
+```
+.blogSection
+```
+
+また、element、modifierの階層は1階層のみとし、
+
+2階層目を表現したくなった時は、モジュール自体を分割する
+
+ことを検討すること。
+
+### NG
+
+``` css
+.blogStructure__context__heading
+```
+``` scss
+.blogStructure{
+  ...
+  &__context{
+    ...
+    ...
+    ...
+    ...
+    &__heading{
+    }
+  }
+}
+```
+上記のようなスタイルは
+
+htmlにおいては、1行ごとの幅が、長くなりがちで、見辛く
+
+CSSにおいては、検索性が悪く、運用フェーズでの原因特定を、困難にする。
+
+### OK
+
+``` css
+.blogStructure__subheading
+```
+``` scss
+.blogStructure{
+  &__subheading{
+  }
+}
+```
+
+## Modifierバリエーション・状態について
+
+BEMにおいては、バリエーションや状態を表現するために、
+
+Block Element に後置修飾されるが、
+
+sass/scssの Mixin、Extend を使用しなければ、
+
+記述が冗長となるケースがあるので、Modifierに関しては
+
+マルチクラスを推奨する。
+
+その際、Modifierの先頭は - (ハイフン)をPrefixとして、
+
+単独では存在しえないクラスとして表現する。
+
+### 冗長
+``` html
+<span class="variousButton--warning">ボタン</span>
+```
+``` scss
+.variousButton{
+  display: inline-block;
+  padding: 1em .2em;
+  line-height: 1.8;
+
+  background-color: #369;
+}
+
+.variousButton--warning{
+  display: inline-block;
+  padding: 1em .2em;
+  line-height: 1.8;
+
+  background-color: #f00;
+}
+```
+
+### 簡潔
+``` html
+<span class="variousButton -warning">ボタン</span>
+```
+``` scss
+.variousButton{
+  display: inline-block;
+  padding: 1em .2em;
+  line-height: 1.8;
+
+  &.-warning{
+    background-color: #f00;
+  }
+}
+```
+
+
+*/

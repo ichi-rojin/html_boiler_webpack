@@ -1,0 +1,65 @@
+/*
+---
+name: Window information
+category:
+  - ユーザーインターフェース
+  - ユーザーインターフェース/Window information
+---
+
+<script>
+$(function () {
+  const resizeHandler = () => {
+    const vw = document.documentElement.style.getPropertyValue('--vw');
+    const vh = document.documentElement.style.getPropertyValue('--vh');
+    const sw = document.documentElement.style.getPropertyValue('--sw');
+
+    $('.windowWidth:first').text("Window width: " + vw);
+    $('.windowHeight:first').text("Window height: " + vh);
+    $('.scrollWidth:first').text("Scrollbar width: " + sw);
+  };
+  setTimeout(resizeHandler, 300);
+  $(window).on('resize', () => {
+    setTimeout(resizeHandler, 300)
+  });
+});
+</script>
+
+```javascript
+$(function () {
+  const resizeHandler = () => {
+    const vw = document.documentElement.style.getPropertyValue('--vw');
+    const vh = document.documentElement.style.getPropertyValue('--vh');
+    const sw = document.documentElement.style.getPropertyValue('--sw');
+
+    $('.windowWidth:first').text("Window width: " + vw);
+    $('.windowHeight:first').text("Window height: " + vh);
+    $('.scrollWidth:first').text("Scrollbar width: " + sw);
+  };
+  setTimeout(resizeHandler, 300);
+  $(window).on('resize', () => {
+    setTimeout(resizeHandler, 300)
+  });
+});
+```
+<style>
+.fontSize{
+  font-size: calc(10px + var(--sw));
+}
+</style>
+```css
+.fontSize{
+  font-size: calc(10px + var(--sw));
+}
+```
+```html
+<div class="windowWidth">
+</div>
+<div class="windowHeight">
+</div>
+<div class="scrollWidth">
+</div>
+<div class="fontSize">
+font size
+</div>
+```
+*/

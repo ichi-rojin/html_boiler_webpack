@@ -1,0 +1,135 @@
+{
+  "extends": [ "stylelint-config-sass-guidelines" ],
+  "plugins": [ "stylelint-scss" ],
+  "ignoreFiles": [
+    "./src/public/assets/scss/foundation/**/*",
+    "./src/public/assets/scss/test/**/*",
+    "./src/public/assets/scss/vendor/**/*",
+    "./src/public/assets/scss/structure.scss"
+  ],
+  "rules": {
+    "order/order": null,
+    "order/properties-alphabetical-order": null,
+    "max-nesting-depth": null,
+    "selector-no-qualifying-type": null,
+    "selector-class-pattern": "^[^0-9].+?$",
+    "selector-max-compound-selectors": null,
+    "declaration-property-value-disallowed-list": null,
+    "scss/at-rule-no-unknown": true,
+    "scss/dollar-variable-pattern": null,
+    "scss/at-function-pattern": "^[a-z]+([a-zA-Z0-9-]+[a-zA-Z0-9]+)?$",
+    "scss/at-mixin-pattern": "^[a-z]+([a-zA-Z0-9-]+[a-zA-Z0-9]+)?$"
+  }
+}
+
+# stylelint-config-sass-guidelines
+
+# 構成されたlints
+# At-rule
+
+#     at-rule-disallowed-list：許可されていない @rules のリストを指定します。
+#         @debug の使用を禁止します。
+#     at-rule-no-vendor-prefix：@rules のベンダープレフィックスを禁止します。
+
+# Block
+
+#     block-no-empty：空のブロックを禁止します。
+#     block-opening-brace-space-before：波括弧の前には、常に1つのスペースが必要です。
+
+# 色
+
+#     color-hex-case：16進色は小文字で書く必要があります。
+#     color-hex-length：可能な場合は、16進表記を短縮します。
+#     color-named：カラーネームは禁止。
+#     color-no-invalid-hex：16進値以外は禁止になります。
+
+# 宣言
+
+#     declaration-bang-space-after：!important の後に空白があってはなりません。
+#     declaration-bang-space-before： !important の前には常に単一のスペースが必要です。
+#     declaration-colon-space-after：コロンの後には常に1つのスペースが必要です。
+#     declaration-colon-space-before：コロンの前に空白があってはなりません。
+
+# 宣言ブロック
+
+#     declaration-block-properties-order：プロパティはアルファベット順にソートする必要があります。
+#     declaration-block-semicolon-newline-after：セミコロンの後には常に改行が必要です。
+#     declaration-block-semicolon-space-before：セミコロンの前に空白があってはなりません。
+#     declaration-block-single-line-max-declarations： 1行あたりの宣言数を超えてはなりません。
+#     declaration-block-trailing-semicolon：末尾のセミコロンは常に必要です。
+
+# 宣言プロパティ
+
+#     declaration-property-value-disallowed-list：宣言内で許可されていないプロパティと値のペアのリストを指定します。
+#         border に none という単語を使用することを禁止し、代わりに 0 を使用します。 このルールの目的は、どちらが「より良い」かを定義するのではなく、一貫性を強制することです。
+
+# 関数
+
+#     function-comma-space-after：1行の関数では、コンマの後に常に1つのスペースが必要です。
+#     function-parentheses-space-inside：関数の括弧の内側に空白があってはなりません。
+#     function-url-quotes：URLは常に引用符で囲む必要があります。
+
+# 全般的
+
+#     indentation：インデントは常に2スペースである必要があります。
+#     length-zero-no-unit：ゼロに単位は許可されません。
+#     max-nesting-depth：許可されるネストの深さを 1 に制限します。
+#     no-missing-eof-newline：空でないファイルでのファイルの終わりの改行の欠落を禁止します。
+
+# メディア機能
+
+#     media-feature-name-no-vendor-prefix：ベンダープレフィックス付きのメディアクエリを禁止します。
+
+# 番号
+
+#     number-leading-zero：小数点のゼロが必要です。
+#     number-no-trailing-zeros：数値の末尾のゼロを禁止します。
+
+# プロパティ
+
+#     property-no-vendor-prefix：プロパティのベンダープレフィックスを禁止します。
+#     shorthand-property-no-redundant-values：値を省略可能なプロパティで冗長な値を許可しません。
+
+# ルール
+
+#     rule-nested-empty-line-before：複数行のルールの前には、常に空の行が必要です。
+#     例外：親ルールの最初のネストされたルール。無視：コメントの後に続くルール。
+#     rule-non-nested-empty-line-before：複数行のルールの前には、常に空の行が必要です。
+#     無視：コメントの後に続くルール。
+
+# SCSS
+
+#     at-extend-no-missing-placeholder プレースホルダーが欠落している @extend を禁止します。
+#     at-function-pattern：SCSS関数は小文字で記述され、正規表現と一致する必要があります^[a-z]+([a-z0-9-]+[a-z0-9]+)?$。
+#     at-import-no-partial-leading-underscore：@import での先頭のアンダースコアを禁止します。
+#     at-import-partial-extension-blacklist：@importコマンドで、部分名に許可されていないファイル拡張子のリストを指定します。
+#         インポートでのファイル拡張子の使用を禁止します。
+#     at-mixin-pattern：SCSSミックスインは小文字で記述し、正規表現と一致する必要があります^[a-z]+([a-z0-9-]+[a-z0-9]+)?$。
+#     dollar-variable-colon-space-after：$変数宣言のコロンの後に1つのスペースが必要です。
+#     dollar-variable-colon-space-before：$変数宣言のコロンの前の空白を禁止します。
+#     dollar-variable-pattern：SCSS変数は小文字で記述し、正規表現と一致する必要があります^[a-z]+([a-z0-9-]+[a-z0-9]+)?$。
+#     percent-placeholder-pattern：%プレースホルダーは小文字で記述し、正規表現と一致する必要があります^[a-z]+([a-z0-9-]+[a-z0-9]+)?$。
+#     selector-no-redundant-nesting-selector：冗長なネストセレクターを禁止します（&）。
+
+# セレクタ
+
+#     selector-class-pattern：セレクターは小文字で記述し、正規表現と一致する必要があります^(?:u|is|has)-[a-z][a-zA-Z0-9]*$|^(?!u|is|has)[a-zA-Z][a-zA-Z0-9]*(?:-[a-z][a-zA-Z0-9]*)?(?:--[a-z][a-zA-Z0-9]*)?$。
+#     selector-list-comma-newline-after：セレクターリストのコンマの後には常に改行が必要です。
+#     selector-max-compound-selectors：セレクター内の複合セレクターの数を 3 に制限します。
+#     selector-no-id：id セレクターを禁止します。
+#     selector-no-qualifying-type：タイプによるセレクターの修飾を禁止します。
+#     selector-no-vendor-prefix：セレクターのベンダープレフィックスを禁止します。
+#     selector-pseudo-element-colon-notation：適用可能な疑似要素は、常にダブルコロン表記を使用する必要があります。
+#     selector-pseudo-element-no-unknown：不明な疑似要素セレクターを禁止します。
+
+# 弦
+
+#     string-quotes：文字列は常にシングルクォートで囲む必要があります。
+
+# Stylelintコメントを無効にする
+
+#     stylelint-disable-reason：「stylelint-disable」コメントの前にコメントを要求します。
+
+# 値
+
+#     value-no-vendor-prefix：値のベンダープレフィックスを禁止します。

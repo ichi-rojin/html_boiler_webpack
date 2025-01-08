@@ -1,0 +1,59 @@
+
+/**
+ * スライダーの部品
+ */
+
+.swipe_btn {
+  background-color: rgba(#000, 0.6);
+  cursor: pointer;
+  display: block;
+  height: 50px;
+
+  margin-top: -25px;
+  position: absolute;
+
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  z-index: mg(levels float);
+  @include mq(sp) {
+    display: none !important;
+  }
+
+  @include hover((
+    type: false
+  )) {
+    background-color: $color_main;
+  }
+}
+
+
+.swipe_btn::before,
+.swipe_btn::after {
+  background-color: #fff;
+  content: '';
+  height: 9px;
+  position: absolute;
+  width: 1px;
+}
+
+.swipe_btn::before {
+  @include skewX(135deg);
+  @include transform-origin(center bottom);
+  bottom: 50%;
+  left: 50%;
+}
+
+.swipe_btn::after {
+  @include skewX(-135deg);
+  left: 50%;
+  top: 50%;
+}
+
+.swipe_next {
+
+  right: 0;
+  transform: rotate(180deg);
+  transform: rotate(180deg);
+  transform: rotate(180deg);
+}

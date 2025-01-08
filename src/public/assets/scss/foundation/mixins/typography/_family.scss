@@ -1,0 +1,3 @@
+@mixin family( $font ) {
+  font-family: unquote(mg(fonts $font));
+}

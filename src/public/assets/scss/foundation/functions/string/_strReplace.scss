@@ -1,0 +1,16 @@
+//
+// 文字列置換
+// @param  {[string]} $string   [対象]
+// @param  {[string]} $search   [検索]
+// @param  {[string]} $replace: ''            [置換]
+// @return {[string]}           [置換後]
+//
+@function strReplace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + strReplace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}

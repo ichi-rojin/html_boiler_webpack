@@ -1,0 +1,44 @@
+/*
+---
+name: アウトライン
+category:
+  - Utility
+  - Utility/Button
+tag:
+  - Button
+---
+
+## カラー
+```html
+<ul style="display: flex; gap: 20px">
+  <li><a href="" class="outlineBtn -color--back">BACK</a></li>
+  <li><a href="" class="outlineBtn -color--primary">PRIMARY</a></li>
+  <li><a href="" class="outlineBtn -color--secondary">SECONDARY</a></li>
+  <li><a href="" class="outlineBtn -color--effect">EFFECT</a></li>
+  <li><a href="" class="outlineBtn -color--border">BORDER</a></li>
+  <li><a href="" class="outlineBtn -color--text">TEXT</a></li>
+</ul>
+```
+
+## サイズ
+```html
+<ul style="display: flex; gap: 20px">
+  <li><a href="" class="outlineBtn -color--primary">PRIMARY</a></li>
+  <li><a href="" class="outlineBtn -color--secondary -size--min">SECONDARY</a></li>
+  <li><a href="" class="outlineBtn -color--effect -size--max">EFFECT</a></li>
+</ul>
+```
+*/
+
+@include btnGen( (
+  class  : outlineBtn,
+  color  : map-merge( (default: #000000), mg(colors) ),
+  hover  : map-merge( (default: #666666), $hoverColor ),
+  height : map-merge( (default: 44px),(min: 32px, max: 58px) ),
+  outline : true,
+) );
+
+.outlineBtn {
+  transition: mg(duration) mg(ease);
+  transition-property: background-color color;
+}

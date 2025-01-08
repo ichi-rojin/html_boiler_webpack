@@ -1,0 +1,49 @@
+/*
+---
+name: タグ
+category:
+  - Utility
+  - Utility/Tag
+tag:
+  - Tag
+---
+
+## カラー
+```html
+<ul style="display: flex; gap: 20px">
+  <li><a href="" class="tag -color--back">BACK</a></li>
+  <li><a href="" class="tag -color--primary">PRIMARY</a></li>
+  <li><a href="" class="tag -color--secondary">SECONDARY</a></li>
+  <li><a href="" class="tag -color--effect">EFFECT</a></li>
+  <li><a href="" class="tag -color--border">BORDER</a></li>
+  <li><a href="" class="tag -color--text">TEXT</a></li>
+</ul>
+```
+
+## サイズ
+```html
+<ul style="display: flex; gap: 20px">
+  <li><a href="" class="tag -color--primary">PRIMARY</a></li>
+  <li><a href="" class="tag -color--secondary -size--min">SECONDARY</a></li>
+  <li><a href="" class="tag -color--effect -size--max">EFFECT</a></li>
+</ul>
+```
+*/
+
+@include btnGen( (
+  class  : tag,
+  color  : map-merge( (default: #000000), mg(colors) ),
+  height : map-merge( (default: 19px),(min: 14px, max: 28px) ),
+  resp-height : (
+    sp : map-merge( (default: 15px),(min: 11px, max: 18px) ),
+  )
+) );
+
+.tag {
+  @include rem(14);
+  padding-right: 8px;
+  padding-left: 8px;
+  @include mq(sp) {
+    @include rem(10);
+  }
+}

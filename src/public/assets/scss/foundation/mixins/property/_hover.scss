@@ -1,0 +1,77 @@
+/*
+---
+name: Hover
+category:
+  - 拡張
+  - 拡張/Mixin
+  - 拡張/Mixin/Hover
+---
+ホバーアクション
+スマートフォンなどの
+マウスオーバー非対応ブラウザでは無視
+
+半透明化のみ
+```scss
+.some {
+  @include hover();
+}
+```
+
+パラメータ
+```scss
+.some {
+  @include hover((
+    type: false
+  )) {
+    transform: scale(1.2);
+    some property...
+  }
+}
+```
+*/
+
+@mixin hover( $__opts: () ) {
+
+  $__type: mg(type, $__opts) == null and true;
+  $__params: mg(params, $__opts) or background color;
+  $__target: mg(target, $__opts) or &;
+  $__duration: mg(duration, $__opts) or mg(duration);
+
+  @media (hover: hover) {
+
+    text-decoration: none;
+    @if( type-of(mg(type, $__opts)) == string) {
+      $__type: mg(type, $__opts);
+
+      &:hover {
+        @if( $__type == text ) {
+          text-decoration: underline;
+        }
+        @content;
+      }
+    }
+    @if($__type == true) {
+      @at-root #{$__target} {
+        transition: opacity $__duration mg(ease);
+      }
+
+      &:hover {
+        opacity: 0.7;
+        @content;
+      }
+    }
+    @else {
+      @at-root #{$__target} {
+        transition: all $__duration mg(ease);
+        transition-property: $__params;
+      }
+
+      &:hover {
+        opacity: 1;
+        @content;
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<%- include(`../includes/_head`) -%>
+<body id="top" style="opacity: 0" class="-loading">
+<div class="bgCanvas">
+  <canvas id="bgCanvas" class="bgCanvas__body"></canvas>
+</div>
+<%- include(`../includes/_header`) -%>
+<div id="parallaxStage">
+  <main>
+  <div class="siteContainer">
+    <% pageContents(__append) %>
+  </div>
+  </main>
+  <%- include(`../includes/_footer`) -%>
+</div>
+</body>
+</html>

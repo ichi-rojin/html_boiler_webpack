@@ -1,0 +1,25 @@
+//
+// プリフィックス付与
+// @param  {[type]} $options:() [
+//  content: 表示内容
+//  indent: インデント
+//  offset: 表示内容の余白
+// ]
+// @return {[type]}             [description]
+//
+@mixin prefix( $options:() ) {
+  $content: mg(content, $options) or '■';
+  $indent: mg(indent, $options) or 1em;
+  $offset: mg(offset, $options) or 0.4em;
+  margin-left: $indent;
+  text-indent: -$indent;
+
+  &::before {
+    content: $content;
+    margin-right: $offset;
+  }
+
+  * {
+    text-indent: 0;
+  }
+}

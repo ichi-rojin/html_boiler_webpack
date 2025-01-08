@@ -1,0 +1,52 @@
+
+/**
+* パララックス
+*/
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;/* 縦スクロールバー表示 *//* 横スクロールバー削除 */
+}
+
+html,
+body,
+main,
+.parallax-container {
+  height: 100%;
+}
+
+.parallax-section {
+  position: relative;
+
+  &.full {
+    height: 100%;
+  }
+
+  &.contents-center {
+    display: table;
+    width: 100%;
+  }
+
+  .parallax-base {
+    @include background-size(cover);
+    background: no-repeat fixed center center;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .parallax-contents {
+    padding: 50px 0;
+    position: relative;
+    z-index: 2;
+  }
+}
+@at-root {
+  .parallax-section.contents-center .parallax-contents {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,17 @@
+diff --git a/node_modules/html-loader/dist/utils.js b/node_modules/html-loader/dist/utils.js
+index 4425cb4..c5a8b02 100644
+--- a/node_modules/html-loader/dist/utils.js
++++ b/node_modules/html-loader/dist/utils.js
+@@ -354,6 +354,12 @@ function parseSrc(input) {
+     value = value.substring(0, value.length - 1);
+   }
+ 
++  const values = value.match(/(?<=url\(['"`]?)[^'"`]+?(?=['"`]?\))/)
++  if (values) {
++    startOffset = values.index;
++    value = values[0];
++  }
++
+   if (!value) {
+     throw new Error("Must be non-empty");
+   }

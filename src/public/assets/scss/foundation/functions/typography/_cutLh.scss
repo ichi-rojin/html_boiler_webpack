@@ -1,0 +1,8 @@
+
+//
+// タイポグラフィ
+//
+
+@function cutLh($num) {
+  @return -(nounit($num) - 1em) / 2;
+}

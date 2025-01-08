@@ -1,0 +1,202 @@
+
+/**
+ * レスポンシブスタイル
+ */
+
+// browser-sync 邪魔なメッセージを削除
+@at-root #__bs_notify__ {
+  display: none !important;
+}
+
+$resp_display: inline inline-block block;
+$prefix: resp--;
+
+.#{$prefix}show {
+  display: none;
+  visibility: hidden;
+  @each $key, $value in mg(site-sizes) {
+    @include mq($key) {
+      visibility: visible;
+      @each $val in $resp_display {
+        &.#{$key}.#{$val} {
+          @if $val == inline-block {
+            display: inline-block;
+          }@else {
+            display: $val;
+          }
+        }
+      }
+    }
+  }
+}
+.#{$prefix}hide {
+  visibility: visible;
+  @each $value in $resp_display {
+    &.#{$value} {
+      @if $value == inline-block {
+        display: inline-block;
+      }@else {
+        display: $value;
+      }
+    }
+  }
+  @each $key, $value in mg(site-sizes) {
+    @include mq($key) {
+      @each $val in $resp_display {
+        &.#{$key}.#{$val} {
+          display: none;
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}
+
+.drawer-btn {
+  $btnWidth: 40px;
+  $btnHeight: 40px;
+  cursor: pointer;
+  display: inline-block;
+  position: fixed;
+  right: mg(paddings sp);
+  top: 15px;
+  z-index: mg(levels overlay) + 20;
+  width: $btnWidth;
+  height: $btnHeight;
+
+  @at-root .drawer-close {
+    display: none;
+    width: $btnWidth;
+    height: $btnHeight;
+    position: fixed;
+    right: mg(paddings sp);
+    top: 15px;
+    z-index: mg(levels overlay) + 30;
+    cursor: pointer;
+  }
+
+  @at-root .drawer--isOpen .drawer-close {
+    display: block;
+  }
+
+  a {
+    display: block;
+    height: 100%;
+    position: relative;
+    width: 100%;
+
+    &::before {
+      content: '';
+      height: $btnHeight;
+      width: $btnWidth;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  i {
+    $iconThick: 2;
+    $iconLength: 3;
+    $iconPadding: 4;
+    $iconHeight: nounit($btnHeight) - $iconThick - ($iconPadding * 2);
+    transition: all 500ms ease-in-out;
+    background: #fff;
+    bottom: 0;
+
+    display: block;
+    height: $iconThick + px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    @for $i from 1 through $iconLength {
+      &:nth-child(#{$i}) {
+        top: $iconPadding + (($i - 1) / ($iconLength - 1) * $iconHeight) + px;
+      }
+    }
+    @at-root body.drawer--isOpen &:nth-child(1) {
+      top: $iconPadding + (1 / ($iconLength - 1) * $iconHeight) + px;
+      transform: rotate(360deg - 45deg);
+    }
+    @at-root body.drawer--isOpen &:nth-child(2) {
+      transform: rotate(-360deg);
+      opacity: 0;
+    }
+    @at-root body.drawer--isOpen &:nth-child(3) {
+      top: $iconPadding + (1 / ($iconLength - 1) * $iconHeight) + px;
+      transform: rotate(360deg + 45deg);
+    }
+  }
+}
+
+.offcanvas {
+  $baseColor: #111;
+  transition: 0.3s ease;
+  transition-property: transform box-shadow;
+  box-shadow: 0, 0;
+  background: rgba($baseColor, 0.05);
+  backdrop-filter: blur(100px);
+
+  @at-root .drawer--isOpen & {
+    box-shadow: 5px 5px 10px rgba(#000, 0.4);
+  }
+
+  &,
+  a {
+    color: #fff;
+  }
+
+}
+
+.drawer-content {
+  transition: 0.6s ease;
+  transition-property: transform box-shadow;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  width: calc(100vw - 25vw - 70px);
+  left: auto;
+  right: 0;
+  transform: translateX(100%);
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 800px;
+    max-height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &::before {
+    mask-image: linear-gradient(190deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 30%, transparent);
+    background: url('#{mg(texture noise)}');
+    filter: contrast(150%) brightness(100%);
+  }
+}
+
+@include mq(sp) {
+  * {
+    box-sizing: border-box;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .gm-style {
+    &,
+    * {
+      max-width: none;
+    }
+  }
+
+  .resp-table__wrapper {
+    overflow-x: scroll;
+    padding-bottom: 10px;
+
+    > table {
+      max-width: none;
+    }
+  }
+}
