@@ -12,6 +12,16 @@ h2.aigis-module__heading マークアップガイドライン
 
   p 詳しくはレギュレーションページを参照。
 
+  h2 Nodeについて
+  p 以下に記述する開発環境を使用する前提として、<br>
+    | Nodeのインストールが必要。<br>
+    | Nodeのバージョン管理ツールとして、
+    a(href='https://volta.sh/' target='_blank' rel='noopener noreferrer') Volta
+    | を推奨する。
+
+  h3 Voltaのインストール
+  a(href='https://docs.volta.sh/guide/getting-started' target='_blank' rel='noopener noreferrer') https://docs.volta.sh/guide/getting-started
+
   h2 プロジェクトの初回設定
 
   dl
@@ -42,6 +52,11 @@ h2.aigis-module__heading マークアップガイドライン
   もしくは
   pre yarn install
 
+  h4 環境変数を設定する
+  p .env.development.example を複製して<br>
+    | .env.development とする。<br>
+    | 現在はPORTのみ、任意のポート番号を設定する
+
   この手順は次回からは不要
 
   h2 プロジェクトの起動
@@ -60,6 +75,15 @@ h2.aigis-module__heading マークアップガイドライン
     li Cmd + C(Mac)
   画面にしたがって終了
 
+  h2 納品ファイルの作成
+  ターミナルで
+
+  pre npm run build
+  もしくは
+  pre yarn build
+
+  distフォルダに展開される。
+
   h2 開発環境について
   h3 対応テンプレートエンジン
   ul
@@ -75,6 +99,13 @@ h2.aigis-module__heading マークアップガイドライン
     img(src=root + '../aigis/assets/img/home/cap6.png')
     figcaption 不要なファイルの読み込みは削除する。
 
+  h2 META・OGP・構造化データの編集
+  pre src/public/meta.json
+  figure
+    img(src=root + '../aigis/assets/img/home/meta.png')
+    figcaption jsonのキーは各ページで定義した pageIDに対応する。
+  figure
+    img(src=root + '../aigis/assets/img/home/meta_page.png')
 
   h2 サイトマップ
   include ../sitemap

@@ -3,10 +3,6 @@
  表示標準化
 
 */
-html {
-  overflow: auto!important;
-}
-
 body,
 .aigis-contentsd
 {

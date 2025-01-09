@@ -16,7 +16,7 @@ options:
 files:
   include: 'src/public/assets/sass/**/*.sass'
   ignore:
-    - 'src/public/assets/sass/vendor/**/*.*'
+    - 'src/public/assets/sass/plugin/**/*.*'
 # Rule Configuration
 rules:
   bem-depth:
@@ -25,17 +25,12 @@ rules:
   extends-before-mixins: 2
   extends-before-declarations: 2
   placeholder-in-extend: 2
-  mixins-before-declarations:
-    - 2
-    -
-      exclude:
-        - breakpoint
-        - mq
+  mixins-before-declarations: 0
 
   no-warn: 1
   no-debug: 1
   no-ids: 0
-  no-important: 2
+  no-important: 0
   hex-notation:
     - 2
     -
@@ -45,17 +40,7 @@ rules:
     -
       size: 2
   property-sort-order:
-    - 1
-    -
-      order:
-        - display
-        - margin
-      ignore-custom-properties: true
-  variable-for-property:
-    - 2
-    -
-      properties:
-        - margin
-        - content
-  no-duplicate-properties: 1
+    - 0
+  variable-for-property: 0
+  no-duplicate-properties: 0
   no-misspelled-properties: 1

@@ -8,7 +8,6 @@
     "./src/public/assets/scss/structure.scss"
   ],
   "rules": {
-    "order/order": null,
     "order/properties-alphabetical-order": null,
     "max-nesting-depth": null,
     "selector-no-qualifying-type": null,

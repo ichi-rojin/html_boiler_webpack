@@ -67,6 +67,11 @@ const imgBaseUrl = (() => {
   return path.dirname(p).replaceAll('\\', '/') + '/'
 })()
 
+const publicBaseUrl = (() => {
+  const p = path.join(path.relative(__dirname, srcPublic), 'public/')
+  return path.dirname(p).replaceAll('\\', '/') + '/'
+})()
+
 const cache = (() => {
   if (devMode) {
     return {
@@ -94,7 +99,7 @@ if (devMode) {
   plugins.push(new SassLintPlugin())
   plugins.push(new PugLintPlugin({
     context: src,
-    files: path.relative(srcPublic, '/**/*.pug'),
+    files: path.relative(srcPublic, '**/*.pug'),
     config: Object.assign({ emitError: true }, require('./.pug-lintrc.json'))
   }))
 }
@@ -119,7 +124,7 @@ for (const [targetName, srcName] of Object.entries(getEntriesList(entryTypes))) 
   plugins.push(new HtmlWebpackPlugin({
     filename: targetName,
     template: srcName,
-    minify: prodMode
+    minify: false,
   }))
 }
 if (prodMode) {
@@ -145,8 +150,11 @@ module.exports = {
     filename: assets.js,
     path: dist,
     assetModuleFilename: (p) => {
-      const fp = p.filename.replace(imgBaseUrl, '')
-      return assets.images.replace('[name][ext]', fp)
+      if (p.filename.indexOf(imgBaseUrl) !== -1) {
+        const fp = p.filename.replace(imgBaseUrl, '')
+        return assets.images.replace('[name][ext]', fp)
+      }
+      return p.filename.replace(publicBaseUrl, '')
     },
     clean: true
   },
@@ -173,18 +181,28 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        exclude: /!src\//,
+        include: [
+          src
+        ],
         use: 'ts-loader'
       },
       {
         test: /\.js$/,
-        exclude: /!src\//,
+        include: [
+          path.resolve(srcPublic, 'assets/js')
+        ],
         use: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
       },
       // Sassファイルの読み込みとコンパイル
       {
         test: /\.s[ac]ss/, // 対象となるファイルの拡張子
-        exclude: /!src\//,
+        include: [
+          path.resolve(srcPublic, 'assets')
+        ],
         // ローダー名
         use: [
           {
@@ -229,8 +247,10 @@ module.exports = {
       },
       {
         // 対象となるファイルの拡張子
-        test: /\.(gif|png|jpg|jpeg|eot|wof|woff|woff2|ttf|svg)$/,
-        exclude: /!src\//,
+        test: /\.(gif|png|jpg|jpeg|eot|wof|woff|woff2|ttf|svg|webp)$/,
+        include: [
+          path.resolve(srcPublic, 'assets/img')
+        ],
         // 画像を埋め込まず任意のフォルダに保存する
         type: 'asset',
         parser: {
@@ -242,7 +262,9 @@ module.exports = {
       },
       {
         test: /\.ejs$/,
-        exclude: /!src\//,
+        include: [
+          srcPublic
+        ],
         use: [
           {
             loader: 'html-loader',
@@ -266,7 +288,9 @@ module.exports = {
       },
       {
         test: /\.pug$/,
-        exclude: /!src\//,
+        include: [
+          srcPublic
+        ],
         use: [
           {
             loader: 'pug-loader',

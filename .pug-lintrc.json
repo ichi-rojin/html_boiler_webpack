@@ -10,7 +10,6 @@
   "disallowIdLiteralsBeforeAttributes": true,
   "disallowLegacyMixinCall": true,
   "disallowMultipleLineBreaks": true,
-  "disallowSpaceAfterCodeOperator": true,
   "disallowSpacesInsideAttributeBrackets": true,
   "disallowSpecificAttributes": [],
   "disallowSpecificTags": [],
@@ -33,7 +32,6 @@
   "validateDivTags": true,
   "validateExtensions": true,
   "validateIndentation": 2,
-  "validateLineBreaks": "LF",
   "validateSelfClosingTags": true,
   "validateTemplateString": true
 }

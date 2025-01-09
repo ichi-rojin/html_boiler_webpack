@@ -27,7 +27,7 @@
         <div class="aigis-contents__layer flamingo"></div>
         <div class="aigis-contents__body">
           <div class="aigis-module">
-            <h2 class="aigis-module__heading">マークアップガイドライン<span class="aigis-module__published">Last update at 2025/01/08 15:20</span></h2>
+            <h2 class="aigis-module__heading">マークアップガイドライン<span class="aigis-module__published">Last update at 2023/04/27 13:01</span></h2>
             <div class="aigis-module">
               <h2>はじめに</h2>
               <p>
@@ -39,6 +39,13 @@
                 均一化する事を目的とする。
               </p>
               <p>詳しくはレギュレーションページを参照。</p>
+              <h2>Nodeについて</h2>
+              <p>
+                以下に記述する開発環境を使用する前提として、<br>
+                Nodeのインストールが必要。<br>
+                Nodeのバージョン管理ツールとして、<a href="https://volta.sh/" target="_blank" rel="noopener noreferrer">Volta</a>を推奨する。
+              </p>
+              <h3>Voltaのインストール</h3><a href="https://docs.volta.sh/guide/getting-started" target="_blank" rel="noopener noreferrer">https://docs.volta.sh/guide/getting-started</a>
               <h2>プロジェクトの初回設定</h2>
               <dl>
                 <dt>開発環境</dt>
@@ -61,7 +68,13 @@
               <h4>それ以外のエディタを使用する場合</h4>
               <p>コマンドプロンプト、パワーシェル、などのターミナルで</p>
               <pre>npm i</pre>もしくは
-              <pre>yarn install</pre>この手順は次回からは不要
+              <pre>yarn install</pre>
+              <h4>環境変数を設定する</h4>
+              <p>
+                .env.development.example を複製して<br>
+                .env.development とする。<br>
+                現在はPORTのみ、任意のポート番号を設定する
+              </p>この手順は次回からは不要
               <h2>プロジェクトの起動</h2>
               <h4>Visual Studio Codeの場合サイドパネルから実行可能</h4><img src="./../aigis/assets/img/home/cap5.png">
               <h4>それ以外のエディタを使用する場合</h4>
@@ -73,6 +86,10 @@
                 <li>Ctrl + C(Win)</li>
                 <li>Cmd + C(Mac)</li>
               </ul>画面にしたがって終了
+              <h2>納品ファイルの作成</h2>ターミナルで
+              <pre>npm run build</pre>もしくは
+              <pre>yarn build</pre>
+              <dist>フォルダに展開される。</dist>
               <h2>開発環境について</h2>
               <h3>対応テンプレートエンジン</h3>
               <ul>
@@ -88,6 +105,12 @@
               <figure><img src="./../aigis/assets/img/home/cap6.png">
                 <figcaption>不要なファイルの読み込みは削除する。</figcaption>
               </figure>
+              <h2>META・OGP・構造化データの編集</h2>
+              <pre>src/public/meta.json</pre>
+              <figure><img src="./../aigis/assets/img/home/meta.png">
+                <figcaption>jsonのキーは各ページで定義した pageIDに対応する。</figcaption>
+              </figure>
+              <figure><img src="./../aigis/assets/img/home/meta_page.png"></figure>
               <h2>サイトマップ</h2>
               <nav class="aigis-categoryList"><ul data-path-depth="0"><li data-path-depth="0"><a href="category\Component\index.html">Component</a><ul data-path-depth="1"><li data-path-depth="1"><a href="category\Component\List\index.html">List</a></li><li data-path-depth="1"><a href="category\Component\Responsive\index.html">Responsive</a></li><li data-path-depth="1"><a href="category\Component\Typography\index.html">Typography</a></li></ul></li><li data-path-depth="0"><a href="category\Layout\index.html">Layout</a><ul data-path-depth="1"><li data-path-depth="1"><a href="category\Layout\Container\index.html">Container</a></li></ul></li><li data-path-depth="0"><a href="category\Utility\index.html">Utility</a><ul data-path-depth="1"><li data-path-depth="1"><a href="category\Utility\Button\index.html">Button</a></li><li data-path-depth="1"><a href="category\Utility\Tag\index.html">Tag</a></li><li data-path-depth="1"><a href="category\Utility\Typography\index.html">Typography</a></li></ul></li><li data-path-depth="0"><a href="category\ユーザーインターフェース\index.html">ユーザーインターフェース</a><ul data-path-depth="1"><li data-path-depth="1"><a href="category\ユーザーインターフェース\Accordion\index.html">Accordion</a></li><li data-path-depth="1"><a href="category\ユーザーインターフェース\Fluidly-table\index.html">Fluidly table</a></li><li data-path-depth="1"><a href="category\ユーザーインターフェース\Off-canvas\index.html">Off canvas</a></li><li data-path-depth="1"><a href="category\ユーザーインターフェース\Responsive-link-text\index.html">Responsive link text</a></li><li data-path-depth="1"><a href="category\ユーザーインターフェース\Select-nav\index.html">Select-nav</a></li><li data-path-depth="1"><a href="category\ユーザーインターフェース\Smartphone-link-protocol\index.html">Smartphone link protocol</a></li><li data-path-depth="1"><a href="category\ユーザーインターフェース\Smooth-scroll\index.html">Smooth-scroll</a></li><li data-path-depth="1"><a href="category\ユーザーインターフェース\Window-information\index.html">Window information</a></li></ul></li><li data-path-depth="0"><a href="category\レギュレーション\index.html">レギュレーション</a><ul data-path-depth="1"><li data-path-depth="1"><a href="category\レギュレーション\1-設計\index.html">1 設計</a></li><li data-path-depth="1"><a href="category\レギュレーション\2-命名\index.html">2 命名</a></li><li data-path-depth="1"><a href="category\レギュレーション\3-まとめ\index.html">3 まとめ</a></li></ul></li><li data-path-depth="0"><a href="category\拡張\index.html">拡張</a><ul data-path-depth="1"><li data-path-depth="1"><a href="category\拡張\Function\index.html">Function</a><ul data-path-depth="2"><li data-path-depth="2"><a href="category\拡張\Function\Alias\index.html">Alias</a></li><li data-path-depth="2"><a href="category\拡張\Function\Map-get\index.html">Map get</a></li><li data-path-depth="2"><a href="category\拡張\Function\Nounit\index.html">Nounit</a></li></ul></li><li data-path-depth="1"><a href="category\拡張\Mixin\index.html">Mixin</a><ul data-path-depth="2"><li data-path-depth="2"><a href="category\拡張\Mixin\Button-generator\index.html">Button generator</a></li><li data-path-depth="2"><a href="category\拡張\Mixin\Hover\index.html">Hover</a></li><li data-path-depth="2"><a href="category\拡張\Mixin\Media-Query\index.html">Media Query</a></li><li data-path-depth="2"><a href="category\拡張\Mixin\Typography\index.html">Typography</a></li></ul></li></ul></li></ul>
               </nav>
